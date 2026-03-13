@@ -49,7 +49,7 @@ export default function Footer() {
     <footer className="w-full bg-[#0F0B23]">
       <div className="max-w-[1055px] mx-auto px-5 py-16">
         <div className="flex flex-col gap-[53px]">
-          <div className="flex justify-center gap-10">
+          <div className="flex flex-wrap justify-center gap-10">
             <div className="flex flex-col gap-3 w-[300px] shrink-0">
               <div className="flex items-center gap-2.5">
                 <Image
@@ -137,7 +137,7 @@ export default function Footer() {
             </div>
           </div>
 
-          <div className="flex items-center justify-between pt-6 border-t border-white/10">
+          <div className="flex flex-wrap items-center justify-between gap-4 pt-6 border-t border-white/10">
             <p className="text-[12px] leading-[16px] text-[#64748B]">
               &copy; 2026 Hagion International Ltd. All rights reserved.
             </p>

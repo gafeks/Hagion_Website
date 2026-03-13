@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Inter, Russo_One } from "next/font/google";
+import { Inter, Russo_One, Poppins } from "next/font/google";
 import { Navbar, Footer } from "@/components/layout";
 import "./globals.css";
 
@@ -12,6 +12,12 @@ const russoOne = Russo_One({
   weight: "400",
   subsets: ["latin"],
   variable: "--font-russo",
+});
+
+const poppins = Poppins({
+  weight: ["400", "500", "600", "700"],
+  subsets: ["latin"],
+  variable: "--font-poppins",
 });
 
 export const metadata: Metadata = {
@@ -32,7 +38,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${inter.variable} ${russoOne.variable} antialiased font-sans`}
+        className={`${inter.variable} ${russoOne.variable} ${poppins.variable} antialiased font-sans`}
       >
         <Navbar />
         <main className="min-h-screen">{children}</main>

@@ -268,7 +268,7 @@ function ServiceCardsSlider() {
       {/* Scrollable Cards */}
       <div
         ref={scrollRef}
-        className="overflow-x-auto overflow-y-visible scrollbar-hide"
+        className="overflow-x-auto overflow-y-hidden scrollbar-hide"
       >
         <div className="flex items-center gap-[30px] pl-[calc((100%-1232px)/2+24px)] pr-8 py-4 w-max">
           {services.map((service, i) => (
