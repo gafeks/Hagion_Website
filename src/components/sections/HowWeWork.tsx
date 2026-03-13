@@ -32,7 +32,7 @@ const steps = [
 
 export default function HowWeWork() {
   return (
-    <section className="w-full bg-white py-20">
+    <section className="w-full bg-white py-20 relative overflow-visible">
       <div className="max-w-[1232px] mx-auto px-6">
         {/* Section Header */}
         <motion.div
@@ -71,14 +71,14 @@ export default function HowWeWork() {
           transition={{ duration: 0.6, delay: 0.2 }}
         >
           {/* Image with vector decoration */}
-          <div className="w-[592px] h-[529px] shrink-0 relative">
-            {/* Vector decoration */}
+          <div className="w-[592px] h-[529px] shrink-0 relative overflow-visible">
+            {/* Vector decoration — extends into next section */}
             <Image
               src="/images/how-we-work-vector.png"
               alt=""
               width={500}
               height={300}
-              className="absolute -left-12 -bottom-10 z-0 pointer-events-none"
+              className="absolute -left-12 -bottom-16 z-0 pointer-events-none"
             />
             {/* Main image */}
             <div className="relative w-full h-full rounded-[10px_90px_10px_10px] overflow-hidden z-10">

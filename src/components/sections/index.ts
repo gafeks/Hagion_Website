@@ -4,3 +4,4 @@ export { default as Partners } from "./Partners";
 export { default as Industries } from "./Industries";
 export { default as HowWeWork } from "./HowWeWork";
 export { default as WhyHagion } from "./WhyHagion";
+export { default as CaseStudies } from "./CaseStudies";
