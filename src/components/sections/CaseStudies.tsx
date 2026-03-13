@@ -43,7 +43,7 @@ export default function CaseStudies() {
             transition={{ duration: 0.5 }}
           >
             <h2 className="text-[46px] font-bold leading-[35px] text-center text-[#101828]">
-              Selected Case Studies
+              Selected <span className="text-[#068653]">Case Studies</span>
             </h2>
             <p className="text-[17.5px] font-normal leading-[24px] text-center text-[#4A5565] max-w-[672px]">
               Delivering measurable impact across industries through tailored
