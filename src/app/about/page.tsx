@@ -1,7 +1,16 @@
+import { AboutHero, StatsBar, CoreValues, OurHistory, MissionVision, Team } from "@/components/sections/about";
+import { CTA } from "@/components/sections";
+
 export default function AboutPage() {
   return (
-    <div className="flex items-center justify-center py-20">
-      <h1 className="text-lg font-semibold">About page goes here</h1>
+    <div className="overflow-x-hidden">
+      <AboutHero />
+      <StatsBar />
+      <CoreValues />
+      <OurHistory />
+      <MissionVision />
+      <Team />
+      <CTA />
     </div>
   );
 }
