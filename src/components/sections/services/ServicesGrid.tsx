@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { useTheme } from "@/components/ui/ThemeProvider";
 import {
   Application,
   Cloud,
@@ -212,31 +213,31 @@ function ServiceCard({
       viewport={{ once: true }}
       transition={{ duration: 0.5, delay: (index % 2) * 0.15 }}
       whileHover={{ y: -4, transition: { duration: 0.2 } }}
-      className="group flex-1 h-full rounded-[14px] border border-black/10 hover:border-[#068653]/50 bg-transparent hover:bg-[#068653]/5 p-[32px_32px_24px] transition-colors duration-300 cursor-pointer"
+      className="group flex-1 h-full rounded-[14px] border border-black/10 dark:border-white/10 hover:border-[#068653]/50 bg-transparent dark:bg-[#1A2035] hover:bg-[#068653]/5 p-[32px_32px_24px] transition-colors duration-300 cursor-pointer"
     >
       {/* Top row: icon + number/title */}
       <div className="flex items-start gap-4">
-        <div className="flex-shrink-0 w-[56px] h-[56px] flex items-center justify-center rounded-[14px] bg-[#2D2555]/5 group-hover:bg-white transition-colors duration-300">
-          <Icon size={28} className="text-[#2D2555] group-hover:text-[#068653] transition-colors duration-300" />
+        <div className="flex-shrink-0 w-[56px] h-[56px] flex items-center justify-center rounded-[14px] bg-[#2D2555]/5 dark:bg-white/10 group-hover:bg-white dark:group-hover:bg-white/20 transition-colors duration-300">
+          <Icon size={28} className="text-[#2D2555] dark:text-[#068653] group-hover:text-[#068653] transition-colors duration-300" />
         </div>
         <div className="flex flex-col gap-0.5">
-          <span className="text-xs leading-4 text-[#2D2555]">
+          <span className="text-xs leading-4 text-[#2D2555] dark:text-[#94A3B8]">
             {number}
           </span>
-          <h3 className="text-xl leading-7 font-normal group-hover:font-medium text-[#101828] group-hover:text-[#068653] transition-colors duration-300">
+          <h3 className="text-xl leading-7 font-normal group-hover:font-medium text-[#101828] dark:text-white group-hover:text-[#068653] transition-colors duration-300">
             {service.title}
           </h3>
         </div>
       </div>
 
       {/* Description */}
-      <p className="mt-4 text-sm leading-5 text-[#4A5565]">
+      <p className="mt-4 text-sm leading-5 text-[#4A5565] dark:text-[#94A3B8]">
         {service.description}
       </p>
 
       {/* What We Deliver */}
       <div className="mt-4">
-        <span className="text-xs uppercase font-normal group-hover:font-medium text-[#5A5A5A] transition-all duration-300" style={{ letterSpacing: "0.6px" }}>
+        <span className="text-xs uppercase font-normal group-hover:font-medium text-[#5A5A5A] dark:text-[#94A3B8] transition-all duration-300" style={{ letterSpacing: "0.6px" }}>
           What We Deliver
         </span>
 
@@ -245,10 +246,10 @@ function ServiceCard({
           <div className="flex-1 flex flex-col gap-1.5">
             {service.leftDeliverables.map((item, i) => (
               <div key={`l-${i}`} className="flex items-center gap-2">
-                <div className="flex-shrink-0 w-[14px] h-[14px] rounded-full border border-[#2D2555] group-hover:border-[#068653] flex items-center justify-center transition-colors duration-300">
-                  <Checkmark size={8} className="text-[#2D2555] group-hover:text-[#068653] transition-colors duration-300" />
+                <div className="flex-shrink-0 w-[14px] h-[14px] rounded-full border border-[#2D2555] dark:border-[#94A3B8] group-hover:border-[#068653] flex items-center justify-center transition-colors duration-300">
+                  <Checkmark size={8} className="text-[#2D2555] dark:text-[#94A3B8] group-hover:text-[#068653] transition-colors duration-300" />
                 </div>
-                <span className="text-[14px] leading-5 text-[#4A5565]">
+                <span className="text-[14px] leading-5 text-[#4A5565] dark:text-[#94A3B8]">
                   {item}
                 </span>
               </div>
@@ -258,10 +259,10 @@ function ServiceCard({
           <div className="flex-1 flex flex-col gap-1.5">
             {service.rightDeliverables.map((item, i) => (
               <div key={`r-${i}`} className="flex items-center gap-2">
-                <div className="flex-shrink-0 w-[14px] h-[14px] rounded-full border border-[#2D2555] group-hover:border-[#068653] flex items-center justify-center transition-colors duration-300">
-                  <Checkmark size={8} className="text-[#2D2555] group-hover:text-[#068653] transition-colors duration-300" />
+                <div className="flex-shrink-0 w-[14px] h-[14px] rounded-full border border-[#2D2555] dark:border-[#94A3B8] group-hover:border-[#068653] flex items-center justify-center transition-colors duration-300">
+                  <Checkmark size={8} className="text-[#2D2555] dark:text-[#94A3B8] group-hover:text-[#068653] transition-colors duration-300" />
                 </div>
-                <span className="text-[14px] leading-5 text-[#4A5565]">
+                <span className="text-[14px] leading-5 text-[#4A5565] dark:text-[#94A3B8]">
                   {item}
                 </span>
               </div>
@@ -274,6 +275,8 @@ function ServiceCard({
 }
 
 export default function ServicesGrid() {
+  const { theme } = useTheme();
+  const isDark = theme === "dark";
   // Build rows of 2 cards each
   const rows: (typeof services)[] = [];
   for (let i = 0; i < services.length; i += 2) {
@@ -281,11 +284,11 @@ export default function ServicesGrid() {
   }
 
   return (
-    <section className="py-20">
+    <section className="py-20 dark:bg-[#0B0F1A]">
       <div className="max-w-[1231px] mx-auto px-6">
         <h2
-          className="text-[38px] font-semibold uppercase mb-12"
-          style={{ color: "#2D2555" }}
+          className="text-[38px] font-semibold uppercase mb-12 dark:text-white"
+          style={{ color: isDark ? undefined : "#2D2555" }}
         >
           OUR SERVICES
         </h2>

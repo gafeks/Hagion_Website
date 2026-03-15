@@ -46,7 +46,7 @@ const socialIcons = [LogoFacebook, LogoTwitter, LogoLinkedin, LogoGithub];
 
 export default function Team() {
   return (
-    <section className="w-full bg-[#F9FAFB] pt-16 pb-24">
+    <section className="w-full bg-[#F9FAFB] dark:bg-[#0F1629] pt-16 pb-24">
       <div className="max-w-[1231px] mx-auto px-6">
         {/* Header */}
         <motion.div
@@ -56,15 +56,15 @@ export default function Team() {
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
         >
-          <h2 className="text-[46px] font-bold leading-[48px] tracking-[-1.2px] text-[#050752] text-center capitalize">
+          <h2 className="text-[46px] font-bold leading-[48px] tracking-[-1.2px] text-[#050752] dark:text-white text-center capitalize">
             Leadership & Management Team
           </h2>
-          <p className="text-[24px] font-normal leading-[150%] text-[#6B7280] text-center">
+          <p className="text-[24px] font-normal leading-[150%] text-[#6B7280] dark:text-[#94A3B8] text-center">
             At Hagion International Ltd, our leadership team combines technical
             expertise, strategic vision, and operational excellence to deliver
             enterprise-grade digital solutions across Africa.
           </p>
-          <p className="text-[24px] font-normal leading-[150%] text-[#6B7280] text-center">
+          <p className="text-[24px] font-normal leading-[150%] text-[#6B7280] dark:text-[#94A3B8] text-center">
             Our management structure ensures strong governance, technical depth,
             and sustainable growth.
           </p>
@@ -75,7 +75,7 @@ export default function Team() {
           {team.map((member, index) => (
             <motion.div
               key={member.name}
-              className="w-[calc(25%-24px)] flex flex-col bg-white rounded-lg shadow-[0px_10px_10px_rgba(0,0,0,0.04)] overflow-hidden"
+              className="w-[calc(25%-24px)] flex flex-col bg-white dark:bg-[#1A2035] rounded-lg shadow-[0px_10px_10px_rgba(0,0,0,0.04)] overflow-hidden"
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -99,16 +99,16 @@ export default function Team() {
                 {/* Name & Role */}
                 <div className="flex flex-col gap-[10px]">
                   <div className="flex flex-col">
-                    <span className="text-[20px] font-bold leading-[150%] text-[#233876]">
+                    <span className="text-[20px] font-bold leading-[150%] text-[#233876] dark:text-[#699EF4]">
                       {member.name}
                     </span>
-                    <span className="text-[14px] font-medium leading-[150%] text-[#262626]">
+                    <span className="text-[14px] font-medium leading-[150%] text-[#262626] dark:text-white">
                       {member.role}
                     </span>
                   </div>
 
                   {/* Bio */}
-                  <p className="text-[14px] font-normal leading-[150%] text-[#6B7280]">
+                  <p className="text-[14px] font-normal leading-[150%] text-[#6B7280] dark:text-[#94A3B8]">
                     {member.bio}
                   </p>
                 </div>
@@ -119,7 +119,7 @@ export default function Team() {
                     <Icon
                       key={i}
                       size={22}
-                      className="text-[#6B7280] hover:text-[#233876] transition-colors cursor-pointer"
+                      className="text-[#6B7280] dark:text-[#94A3B8] hover:text-[#233876] dark:hover:text-[#699EF4] transition-colors cursor-pointer"
                     />
                   ))}
                 </div>

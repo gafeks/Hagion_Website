@@ -46,7 +46,7 @@ const socials = [
 
 export default function Footer() {
   return (
-    <footer className="w-full bg-[#0F0B23]">
+    <footer className="w-full bg-[#0F0B23] dark:bg-[#060912]">
       <div className="max-w-[1055px] mx-auto px-5 py-16">
         <div className="flex flex-col gap-[53px]">
           <div className="flex flex-wrap justify-center gap-10">

@@ -13,7 +13,7 @@ const industries = [
 
 export default function Industries() {
   return (
-    <section className="w-full bg-white py-[71px] border-t border-b border-[#10B981]/20">
+    <section className="w-full bg-white dark:bg-[#0B0F1A] py-[71px] border-t border-b border-[#10B981]/20 dark:border-[#10B981]/10">
       <div className="max-w-[1064px] mx-auto px-6">
         <motion.div
           className="flex flex-col items-center gap-[14px]"
@@ -22,10 +22,10 @@ export default function Industries() {
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
         >
-          <h2 className="text-[40px] font-semibold leading-[35px] text-center text-[#2D2555]">
+          <h2 className="text-[40px] font-semibold leading-[35px] text-center text-[#2D2555] dark:text-white">
             <span className="text-[#068653]">Industries</span> We Serve
           </h2>
-          <p className="text-[17.5px] font-normal leading-[24px] text-center text-[#5A5A5A]">
+          <p className="text-[17.5px] font-normal leading-[24px] text-center text-[#5A5A5A] dark:text-[#94A3B8]">
             We deliver specialized digital solutions across diverse industries
           </p>
         </motion.div>
@@ -41,7 +41,7 @@ export default function Industries() {
           {industries.map((industry, index) => (
             <motion.div
               key={industry}
-              className="flex items-center justify-center px-[21px] w-[166px] h-[74px] shrink-0 bg-[#10B981]/10 border border-[#10B981]/20 rounded-[12.75px]"
+              className="flex items-center justify-center px-[21px] w-[166px] h-[74px] shrink-0 bg-[#10B981]/10 dark:bg-[#10B981]/15 border border-[#10B981]/20 rounded-[12.75px]"
               initial={{ opacity: 0, scale: 0.9 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}

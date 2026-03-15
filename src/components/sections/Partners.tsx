@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { motion } from "framer-motion";
 import Marquee from "react-fast-marquee";
+import { useTheme } from "@/components/ui/ThemeProvider";
 
 const partners = [
   { src: "/images/fmcide.png", alt: "FMCIDE", width: 223, height: 80 },
@@ -13,8 +14,11 @@ const partners = [
 ];
 
 export default function Partners() {
+  const { theme } = useTheme();
+  const isDark = theme === "dark";
+
   return (
-    <section className="w-full bg-white py-20 overflow-hidden">
+    <section className="w-full bg-white dark:bg-[#0B0F1A] py-20 overflow-hidden">
       <div className="max-w-[1232px] mx-auto px-6">
         <motion.div
           className="flex flex-col items-center gap-4"
@@ -31,7 +35,7 @@ export default function Partners() {
             <div className="w-8 h-[2px] bg-[#068653] rounded-full" />
           </div>
 
-          <h2 className="text-[46px] font-bold leading-[48px] tracking-[-1.2px] text-[#0F172A]">
+          <h2 className="text-[46px] font-bold leading-[48px] tracking-[-1.2px] text-[#0F172A] dark:text-white">
             OUR PARTNERS
           </h2>
         </motion.div>
@@ -47,7 +51,7 @@ export default function Partners() {
         <Marquee
           speed={40}
           gradient
-          gradientColor="white"
+          gradientColor={isDark ? "#0B0F1A" : "white"}
           gradientWidth={100}
           pauseOnHover
         >
@@ -61,7 +65,7 @@ export default function Partners() {
                 alt={partner.alt}
                 width={partner.width}
                 height={partner.height}
-                className="object-contain"
+                className="object-contain dark:invert dark:opacity-80"
               />
             </div>
           ))}

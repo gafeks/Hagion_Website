@@ -11,7 +11,7 @@ const stats = [
 
 export default function StatsBar() {
   return (
-    <section className="w-full bg-black py-5">
+    <section className="w-full bg-black dark:bg-[#060912] py-5">
       <div className="max-w-[1235px] mx-auto px-6">
         <div className="flex gap-8">
           {stats.map((stat, index) => (

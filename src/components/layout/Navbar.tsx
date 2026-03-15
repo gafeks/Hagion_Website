@@ -3,8 +3,9 @@
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
-import { Moon } from "@carbon/icons-react";
+import { Moon, Sun } from "@carbon/icons-react";
 import { motion, AnimatePresence } from "framer-motion";
+import { useTheme } from "@/components/ui/ThemeProvider";
 
 const navLinks = [
   { label: "Home", href: "/" },
@@ -18,10 +19,11 @@ const navLinks = [
 
 export default function Navbar() {
   const pathname = usePathname();
+  const { theme, toggleTheme } = useTheme();
 
   return (
     <motion.nav
-      className="w-full sticky top-0 z-50 bg-white/80 backdrop-blur-md"
+      className="w-full sticky top-0 z-50 bg-white/80 dark:bg-[#0B0F1A]/90 backdrop-blur-md"
       initial={{ y: -20, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.4, ease: "easeOut" }}
@@ -39,7 +41,7 @@ export default function Navbar() {
               height={60}
             />
           </motion.div>
-          <span className="text-[24px] font-semibold leading-[32px] text-[#2D2555]">
+          <span className="text-[24px] font-semibold leading-[32px] text-[#2D2555] dark:text-white">
             Hagion
           </span>
         </Link>
@@ -54,8 +56,8 @@ export default function Navbar() {
                 href={link.href}
                 className={`relative flex items-center justify-center h-[36px] py-2 px-3 text-[13px] font-normal leading-[20px] whitespace-nowrap transition-colors ${
                   isActive
-                    ? "text-[#2D2555]"
-                    : "text-[#4A5565] hover:text-[#2D2555]"
+                    ? "text-[#2D2555] dark:text-white"
+                    : "text-[#4A5565] hover:text-[#2D2555] dark:text-[#94A3B8] dark:hover:text-white"
                 } ${isContact ? "rounded-lg" : ""}`}
               >
                 <motion.span
@@ -66,7 +68,7 @@ export default function Navbar() {
                 </motion.span>
                 {isActive && (
                   <motion.div
-                    className="absolute bottom-0 left-3 right-3 h-[0.8px] bg-[#2D2555]"
+                    className="absolute bottom-0 left-3 right-3 h-[0.8px] bg-[#2D2555] dark:bg-white"
                     layoutId="activeNavLink"
                     transition={{ type: "spring", stiffness: 350, damping: 30 }}
                   />
@@ -78,12 +80,17 @@ export default function Navbar() {
 
         <div className="flex items-center w-[167px] h-[37px]">
           <motion.button
+            onClick={toggleTheme}
             className="flex items-start pt-2 pb-2 pl-2 pr-6 h-[36px]"
             whileHover={{ rotate: -20 }}
             whileTap={{ scale: 0.9 }}
             transition={{ type: "spring", stiffness: 300, damping: 15 }}
           >
-            <Moon size={20} className="text-[#4A5565]" />
+            {theme === "dark" ? (
+              <Sun size={20} className="text-yellow-400" />
+            ) : (
+              <Moon size={20} className="text-[#4A5565]" />
+            )}
           </motion.button>
           <motion.div
             whileHover={{ scale: 1.03 }}
@@ -92,7 +99,7 @@ export default function Navbar() {
           >
             <Link
               href="/get-started"
-              className="flex items-center justify-center w-[115px] h-[37px] px-3 bg-[#2D2555] text-white text-[13.3px] font-medium leading-[20px] rounded-lg hover:bg-[#231d45] transition-colors"
+              className="flex items-center justify-center w-[115px] h-[37px] px-3 bg-[#2D2555] dark:bg-[#068653] text-white text-[13.3px] font-medium leading-[20px] rounded-lg hover:bg-[#231d45] dark:hover:bg-[#057a4a] transition-colors"
             >
               Get Started
             </Link>

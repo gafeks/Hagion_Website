@@ -6,7 +6,7 @@ import { motion } from "framer-motion";
 
 export default function AboutHero() {
   return (
-    <section className="relative w-full h-[833px] bg-white overflow-hidden">
+    <section className="relative w-full h-[833px] bg-white dark:bg-[#0B0F1A] overflow-hidden">
       {/* Hero background image (entire composition) */}
       <div className="absolute inset-y-0 left-0 right-0 max-w-[1231px] mx-auto px-6">
         <motion.div
@@ -46,7 +46,7 @@ export default function AboutHero() {
           </h1>
 
           {/* Description */}
-          <p className="mt-[20px] text-[16px] font-normal leading-[160%] text-[#737373]">
+          <p className="mt-[20px] text-[16px] font-normal leading-[160%] text-[#737373] dark:text-[#94A3B8]">
             Hagion International Ltd is a technology and digital transformation
             company committed to building innovative, scalable, and impact
             digital solutions across Africa.
@@ -55,7 +55,7 @@ export default function AboutHero() {
           {/* CTA Button */}
           <Link
             href="/services"
-            className="inline-flex items-center justify-center mt-[24px] w-[170px] h-[54px] bg-[#2D2555] border border-[#050752] rounded-[10px] text-[18px] font-medium leading-[22px] text-white hover:bg-[#2D2555]/90 transition-colors"
+            className="inline-flex items-center justify-center mt-[24px] w-[170px] h-[54px] bg-[#2D2555] dark:bg-[#068653] border border-[#050752] dark:border-[#068653] rounded-[10px] text-[18px] font-medium leading-[22px] text-white hover:bg-[#2D2555]/90 dark:hover:bg-[#057a4a] transition-colors"
           >
             Read More
           </Link>

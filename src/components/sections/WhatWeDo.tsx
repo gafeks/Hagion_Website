@@ -3,6 +3,7 @@
 import { useRef, useState } from "react";
 import Link from "next/link";
 import { motion } from "framer-motion";
+import { useTheme } from "@/components/ui/ThemeProvider";
 import {
   ArrowRight,
   ArrowLeft,
@@ -183,12 +184,14 @@ function ServiceCard({
 }) {
   const [hovered, setHovered] = useState(false);
   const { hover } = service;
+  const { theme } = useTheme();
+  const isDark = theme === "dark";
 
   return (
     <motion.div
       className="flex flex-col justify-center w-[395px] h-[240px] rounded-3xl px-8 py-7 gap-6 shrink-0 cursor-pointer transition-colors duration-300"
       style={{
-        background: hovered ? hover.cardBg : "#F2F9FF",
+        background: hovered ? hover.cardBg : isDark ? "#1A2035" : "#F2F9FF",
       }}
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
@@ -217,13 +220,13 @@ function ServiceCard({
       <div className="flex flex-col gap-3">
         <h3
           className="text-[16px] font-bold leading-[28px] transition-colors duration-300"
-          style={{ color: hovered ? hover.titleColor : "#0F172A" }}
+          style={{ color: hovered ? hover.titleColor : isDark ? "#E2E8F0" : "#0F172A" }}
         >
           {service.title}
         </h3>
         <p
           className="text-[12px] font-normal leading-[23px] transition-colors duration-300"
-          style={{ color: hovered ? hover.descColor : "#64748B" }}
+          style={{ color: hovered ? hover.descColor : isDark ? "#94A3B8" : "#64748B" }}
         >
           {service.description}
         </p>
@@ -249,7 +252,7 @@ function ServiceCardsSlider() {
       {/* Left Arrow */}
       <motion.button
         onClick={() => scroll("left")}
-        className="absolute left-4 top-1/2 -translate-y-1/2 z-10 flex items-center justify-center w-[44px] h-[44px] rounded-full bg-white border border-gray-200 shadow-md text-[#050752] hover:bg-gray-50 transition-colors"
+        className="absolute left-4 top-1/2 -translate-y-1/2 z-10 flex items-center justify-center w-[44px] h-[44px] rounded-full bg-white dark:bg-[#1A2035] border border-gray-200 dark:border-white/10 shadow-md text-[#050752] dark:text-white hover:bg-gray-50 dark:hover:bg-[#1A2035]/80 transition-colors"
         whileHover={{ scale: 1.1 }}
         whileTap={{ scale: 0.95 }}
       >
@@ -259,7 +262,7 @@ function ServiceCardsSlider() {
       {/* Right Arrow */}
       <motion.button
         onClick={() => scroll("right")}
-        className="absolute right-4 top-1/2 -translate-y-1/2 z-10 flex items-center justify-center w-[44px] h-[44px] rounded-full bg-white border border-gray-200 shadow-md text-[#050752] hover:bg-gray-50 transition-colors"
+        className="absolute right-4 top-1/2 -translate-y-1/2 z-10 flex items-center justify-center w-[44px] h-[44px] rounded-full bg-white dark:bg-[#1A2035] border border-gray-200 dark:border-white/10 shadow-md text-[#050752] dark:text-white hover:bg-gray-50 dark:hover:bg-[#1A2035]/80 transition-colors"
         whileHover={{ scale: 1.1 }}
         whileTap={{ scale: 0.95 }}
       >
@@ -283,7 +286,7 @@ function ServiceCardsSlider() {
 
 export default function WhatWeDo() {
   return (
-    <section className="w-full bg-[#F5F8FF] py-20">
+    <section className="w-full bg-[#F5F8FF] dark:bg-[#0F1629] py-20">
       <div className="max-w-[1232px] mx-auto px-6">
         {/* Section Header */}
         <motion.div
@@ -303,12 +306,12 @@ export default function WhatWeDo() {
           </div>
 
           {/* Heading */}
-          <h2 className="text-[46px] font-bold leading-[48px] tracking-[-1.2px] text-[#0F172A] text-center">
+          <h2 className="text-[46px] font-bold leading-[48px] tracking-[-1.2px] text-[#0F172A] dark:text-white text-center">
             OUR CORE SERVICES
           </h2>
 
           {/* Subtitle */}
-          <p className="text-[16px] font-normal leading-[29px] text-center text-[#5C5E61]">
+          <p className="text-[16px] font-normal leading-[29px] text-center text-[#5C5E61] dark:text-[#94A3B8]">
             Comprehensive Technology Solutions Built for Scale
           </p>
 
@@ -320,7 +323,7 @@ export default function WhatWeDo() {
           >
             <Link
               href="/services"
-              className="flex items-center justify-center gap-2 w-[204px] h-[54px] border border-[#050752] rounded-xl text-[13.2px] font-bold leading-[20px] text-[#050752] hover:bg-[#050752]/5 transition-colors"
+              className="flex items-center justify-center gap-2 w-[204px] h-[54px] border border-[#050752] dark:border-white/20 rounded-xl text-[13.2px] font-bold leading-[20px] text-[#050752] dark:text-white hover:bg-[#050752]/5 dark:hover:bg-white/5 transition-colors"
             >
               Explore All Services
               <ArrowUpRight size={16} />

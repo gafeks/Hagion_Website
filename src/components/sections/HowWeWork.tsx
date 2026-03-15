@@ -32,7 +32,7 @@ const steps = [
 
 export default function HowWeWork() {
   return (
-    <section className="w-full bg-white py-20 relative overflow-visible">
+    <section className="w-full bg-white dark:bg-[#0B0F1A] py-20 relative overflow-visible">
       <div className="max-w-[1232px] mx-auto px-6">
         {/* Section Header */}
         <motion.div
@@ -51,12 +51,12 @@ export default function HowWeWork() {
           </div>
 
           {/* Heading */}
-          <h2 className="text-[46px] font-bold leading-[48px] tracking-[-1.2px] text-[#0F172A]">
+          <h2 className="text-[46px] font-bold leading-[48px] tracking-[-1.2px] text-[#0F172A] dark:text-white">
             HOW WE WORK
           </h2>
 
           {/* Subtitle */}
-          <p className="text-[16px] font-normal leading-[22px] text-[#5C5E61] max-w-[686px]">
+          <p className="text-[16px] font-normal leading-[22px] text-[#5C5E61] dark:text-[#94A3B8] max-w-[686px]">
             We follow a structured, results-driven development approach designed
             to reduce risk and maximize impact.
           </p>
@@ -109,10 +109,10 @@ export default function HowWeWork() {
 
                 {/* Text */}
                 <div className="flex flex-col gap-[2px]">
-                  <h3 className="text-[24px] font-semibold leading-[28px] text-[#050752]">
+                  <h3 className="text-[24px] font-semibold leading-[28px] text-[#050752] dark:text-white">
                     {step.title}
                   </h3>
-                  <p className="text-[18px] font-normal leading-[28px] text-[#6B6B6B] font-[family-name:var(--font-poppins)]">
+                  <p className="text-[18px] font-normal leading-[28px] text-[#6B6B6B] dark:text-[#94A3B8] font-[family-name:var(--font-poppins)]">
                     {step.description}
                   </p>
                 </div>

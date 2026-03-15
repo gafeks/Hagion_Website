@@ -31,7 +31,7 @@ const caseStudies = [
 
 export default function CaseStudies() {
   return (
-    <section className="w-full bg-[#F9FAFB] py-[53px]">
+    <section className="w-full bg-[#F9FAFB] dark:bg-[#0F1629] py-[53px]">
       <div className="max-w-[1064px] mx-auto px-6">
         <div className="flex flex-col items-center gap-[38px]">
           {/* Header */}
@@ -42,10 +42,10 @@ export default function CaseStudies() {
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
           >
-            <h2 className="text-[46px] font-bold leading-[35px] text-center text-[#101828]">
+            <h2 className="text-[46px] font-bold leading-[35px] text-center text-[#101828] dark:text-white">
               Selected <span className="text-[#068653]">Case Studies</span>
             </h2>
-            <p className="text-[17.5px] font-normal leading-[24px] text-center text-[#4A5565] max-w-[672px]">
+            <p className="text-[17.5px] font-normal leading-[24px] text-center text-[#4A5565] dark:text-[#94A3B8] max-w-[672px]">
               Delivering measurable impact across industries through tailored
               digital solutions
             </p>
@@ -56,7 +56,7 @@ export default function CaseStudies() {
             {caseStudies.map((study, index) => (
               <motion.div
                 key={study.title}
-                className="w-[336px] bg-white border border-black/10 rounded-[12.75px] overflow-hidden"
+                className="w-[336px] bg-white dark:bg-[#1A2035] border border-black/10 dark:border-white/10 rounded-[12.75px] overflow-hidden"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
@@ -75,10 +75,10 @@ export default function CaseStudies() {
 
                 {/* Content */}
                 <div className="p-[21px] flex flex-col gap-[6px]">
-                  <h3 className="text-[17.5px] font-medium leading-[24px] text-[#0A0A0A]">
+                  <h3 className="text-[17.5px] font-medium leading-[24px] text-[#0A0A0A] dark:text-white">
                     {study.title}
                   </h3>
-                  <p className="text-[14px] font-normal leading-[21px] text-[#4A5565]">
+                  <p className="text-[14px] font-normal leading-[21px] text-[#4A5565] dark:text-[#94A3B8]">
                     {study.description}
                   </p>
                 </div>
@@ -88,7 +88,7 @@ export default function CaseStudies() {
                   {study.tags.map((tag) => (
                     <span
                       key={tag}
-                      className="px-[10.5px] py-[3.5px] bg-[#EFF6FF] rounded-full text-[10.5px] leading-[14px] text-[#2D2555]"
+                      className="px-[10.5px] py-[3.5px] bg-[#EFF6FF] dark:bg-white/10 rounded-full text-[10.5px] leading-[14px] text-[#2D2555] dark:text-[#94A3B8]"
                     >
                       {tag}
                     </span>
@@ -107,7 +107,7 @@ export default function CaseStudies() {
           >
             <Link
               href="/portfolio"
-              className="inline-flex items-center gap-2 px-[12.8px] py-[7.75px] bg-white border border-[#2D2555] rounded-[6.75px] text-[12.25px] font-medium leading-[18px] text-[#2D2555] hover:bg-[#2D2555]/5 transition-colors"
+              className="inline-flex items-center gap-2 px-[12.8px] py-[7.75px] bg-white dark:bg-transparent border border-[#2D2555] dark:border-white/20 rounded-[6.75px] text-[12.25px] font-medium leading-[18px] text-[#2D2555] dark:text-white hover:bg-[#2D2555]/5 dark:hover:bg-white/5 transition-colors"
             >
               View Full Portfolio
               <ArrowUpRight size={14} />

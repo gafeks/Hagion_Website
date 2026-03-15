@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { ArrowRight, CheckmarkOutline } from "@carbon/icons-react";
+import { useTheme } from "@/components/ui/ThemeProvider";
 
 const stats = [
   { value: "20+", label: "Digital Projects Delivered" },
@@ -52,14 +53,17 @@ const connectorPaths = [
 ];
 
 export default function Hero() {
+  const { theme } = useTheme();
+  const isDark = theme === "dark";
+
   return (
-    <section className="relative w-full h-[820px] bg-white overflow-hidden">
+    <section className="relative w-full h-[820px] bg-white dark:bg-[#0B0F1A] overflow-hidden">
       {/* Background image (grid + sparkles) */}
       <motion.div
         className="absolute inset-0 bg-center bg-cover bg-no-repeat"
         style={{ backgroundImage: "url('/images/hg-hero-bg.png')" }}
         initial={{ scale: 1.05, opacity: 0 }}
-        animate={{ scale: 1, opacity: 1 }}
+        animate={{ scale: 1, opacity: isDark ? 0.08 : 1 }}
         transition={{ duration: 1.2, ease: "easeOut" }}
       />
 
@@ -149,8 +153,9 @@ export default function Hero() {
       <div
         className="absolute left-0 right-0 bottom-0 h-[56px]"
         style={{
-          background:
-            "linear-gradient(180deg, rgba(255,255,255,0.2) -43.84%, #F5F8FF 81.51%)",
+          background: isDark
+            ? "linear-gradient(180deg, rgba(15,22,41,0.2) -43.84%, #0F1629 81.51%)"
+            : "linear-gradient(180deg, rgba(255,255,255,0.2) -43.84%, #F5F8FF 81.51%)",
         }}
       />
 
@@ -164,7 +169,7 @@ export default function Hero() {
         >
           {/* Heading */}
           <motion.h1
-            className="w-full max-w-[1008px] text-[62px] font-semibold leading-[74px] text-center text-black"
+            className="w-full max-w-[1008px] text-[62px] font-semibold leading-[74px] text-center text-black dark:text-white"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.1 }}
@@ -176,7 +181,7 @@ export default function Hero() {
 
           {/* Subtitle */}
           <motion.p
-            className="max-w-[802px] text-[20px] font-normal leading-[34px] text-center text-[#5A5A5A]"
+            className="max-w-[802px] text-[20px] font-normal leading-[34px] text-center text-[#5A5A5A] dark:text-[#94A3B8]"
             initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.2 }}
@@ -199,7 +204,7 @@ export default function Hero() {
             >
               <Link
                 href="/request-quote"
-                className="flex items-center justify-center gap-2 w-[203px] h-[50px] bg-[#2D2555] text-white text-[13.2px] font-medium leading-[20px] rounded-lg hover:bg-[#231d45] transition-colors"
+                className="flex items-center justify-center gap-2 w-[203px] h-[50px] bg-[#2D2555] dark:bg-[#068653] text-white text-[13.2px] font-medium leading-[20px] rounded-lg hover:bg-[#231d45] dark:hover:bg-[#057a4a] transition-colors"
               >
                 Request a Consultation
                 <ArrowRight size={16} />
@@ -211,7 +216,7 @@ export default function Hero() {
             >
               <Link
                 href="/portfolio"
-                className="flex items-center justify-center w-[151px] h-[49px] bg-white border border-[#2D2555] text-[#2D2555] text-[13.5px] font-medium leading-[20px] rounded-lg hover:bg-[#f8f7fc] transition-colors"
+                className="flex items-center justify-center w-[151px] h-[49px] bg-white dark:bg-white/10 border border-[#2D2555] dark:border-white/20 text-[#2D2555] dark:text-white text-[13.5px] font-medium leading-[20px] rounded-lg hover:bg-[#f8f7fc] dark:hover:bg-white/15 transition-colors"
               >
                 View Our Work
               </Link>
@@ -233,13 +238,13 @@ export default function Hero() {
                 transition={{ type: "spring", stiffness: 300, damping: 20 }}
               >
                 {stat.value === "check" ? (
-                  <CheckmarkOutline size={35} className="text-[#2D2555]" />
+                  <CheckmarkOutline size={35} className="text-[#2D2555] dark:text-white" />
                 ) : (
-                  <span className="text-[26px] font-semibold leading-[36px] text-[#2D2555]">
+                  <span className="text-[26px] font-semibold leading-[36px] text-[#2D2555] dark:text-white">
                     {stat.value}
                   </span>
                 )}
-                <span className="text-[10px] font-semibold leading-[16px] tracking-[0.6px] uppercase text-[#5A5A5A]">
+                <span className="text-[10px] font-semibold leading-[16px] tracking-[0.6px] uppercase text-[#5A5A5A] dark:text-[#94A3B8]">
                   {stat.label}
                 </span>
               </motion.div>

@@ -52,7 +52,7 @@ const features = [
 
 export default function WhyHagion() {
   return (
-    <section className="w-full bg-[#F1F8FF] py-20">
+    <section className="w-full bg-[#F1F8FF] dark:bg-[#0F1629] py-20">
       <div className="max-w-[1232px] mx-auto px-6">
         <motion.div
           className="flex items-center gap-[80px]"
@@ -74,12 +74,12 @@ export default function WhyHagion() {
               </div>
 
               {/* Heading */}
-              <h2 className="text-[46px] font-bold leading-[48px] tracking-[-1.2px] text-[#0F172A]">
+              <h2 className="text-[46px] font-bold leading-[48px] tracking-[-1.2px] text-[#0F172A] dark:text-white">
                 Why Businesses Choose Hagion International Ltd
               </h2>
 
               {/* Subtitle */}
-              <p className="text-[16px] font-normal leading-[29px] text-[#5C5E61]">
+              <p className="text-[16px] font-normal leading-[29px] text-[#5C5E61] dark:text-[#94A3B8]">
                 We combine deep technical expertise with a consultative approach
                 to deliver solutions that drive real, measurable business
                 outcomes.
@@ -91,7 +91,7 @@ export default function WhyHagion() {
               {features.map((feature, index) => (
                 <motion.div
                   key={feature.title}
-                  className="flex items-center gap-4 px-[19.89px] py-[12px] bg-[rgba(249,250,251,0.6)] border border-[#F1F5F9] rounded-2xl"
+                  className="flex items-center gap-4 px-[19.89px] py-[12px] bg-[rgba(249,250,251,0.6)] dark:bg-white/5 border border-[#F1F5F9] dark:border-white/10 rounded-2xl"
                   initial={{ opacity: 0, x: -20 }}
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true }}
@@ -109,7 +109,7 @@ export default function WhyHagion() {
                   </div>
 
                   {/* Title */}
-                  <h4 className="text-[15.1px] font-bold leading-[24px] text-[#0F172A]">
+                  <h4 className="text-[15.1px] font-bold leading-[24px] text-[#0F172A] dark:text-white">
                     {feature.title}
                   </h4>
                 </motion.div>

@@ -13,12 +13,12 @@ const serviceTags = [
 
 export default function ServicesHero() {
   return (
-    <section className="w-full bg-white pt-20 pb-10">
+    <section className="w-full bg-white dark:bg-[#0B0F1A] pt-20 pb-10">
       <div className="max-w-[1231px] mx-auto px-6">
         <div className="flex h-[612px]">
           {/* Left Side */}
           <motion.div
-            className="relative flex-[782] flex flex-col items-start gap-5 pr-[100px] pt-0 pb-[90px] rounded-l-[16px] bg-white"
+            className="relative flex-[782] flex flex-col items-start gap-5 pr-[100px] pt-0 pb-[90px] rounded-l-[16px] bg-white dark:bg-[#0B0F1A]"
             initial={{ opacity: 0, x: -30 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6 }}
@@ -32,12 +32,12 @@ export default function ServicesHero() {
             </div>
 
             {/* Heading */}
-            <h1 className="text-[50px] font-semibold leading-[130%] capitalize text-[#09090B] max-w-[556px]">
+            <h1 className="text-[50px] font-semibold leading-[130%] capitalize text-[#09090B] dark:text-white max-w-[556px]">
               Engineering Intelligent <span className="text-[#068653]">Digital Infrastructure</span> for Growth 
             </h1>
 
             {/* Description */}
-            <p className="text-[24px] font-normal leading-[170%] text-[#676665] max-w-[683px]">
+            <p className="text-[24px] font-normal leading-[170%] text-[#676665] dark:text-[#94A3B8] max-w-[683px]">
               11 specialized technology service areas designed to cover every stage of your digital transformation journey
             </p>
 
@@ -54,7 +54,7 @@ export default function ServicesHero() {
                   <ArrowRight size={18} className="text-white" />
                 </div>
               </div>
-              <span className="text-[21px] font-medium leading-[150%] capitalize text-[#2D2555]">
+              <span className="text-[21px] font-medium leading-[150%] capitalize text-[#2D2555] dark:text-white">
                 Start a Project
               </span>
             </div>

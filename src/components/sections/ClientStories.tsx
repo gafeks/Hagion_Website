@@ -51,7 +51,7 @@ function TestimonialCard({
   return (
     <motion.div
       key={t.name}
-      className="flex-1 relative rounded-[24px] p-[32.89px] bg-white border border-[#E2E8F0] overflow-hidden"
+      className="flex-1 relative rounded-[24px] p-[32.89px] bg-white dark:bg-[#1A2035] border border-[#E2E8F0] dark:border-white/10 overflow-hidden"
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
@@ -164,7 +164,7 @@ function TestimonialCard({
 
 export default function ClientStories() {
   return (
-    <section className="w-full bg-[#F1F7FC] py-20">
+    <section className="w-full bg-[#F1F7FC] dark:bg-[#0F1629] py-20">
       <div className="max-w-[1232px] mx-auto px-6">
         {/* Header */}
         <motion.div
@@ -184,12 +184,12 @@ export default function ClientStories() {
           </div>
 
           {/* Heading */}
-          <h2 className="text-[46px] font-bold leading-[48px] tracking-[-1.2px] text-[#0F172A] text-center">
+          <h2 className="text-[46px] font-bold leading-[48px] tracking-[-1.2px] text-[#0F172A] dark:text-white text-center">
             Trusted by industry leaders
           </h2>
 
           {/* Subtitle */}
-          <p className="text-[24px] font-normal leading-[29px] text-[#5C5E61] max-w-[829px] text-center">
+          <p className="text-[24px] font-normal leading-[29px] text-[#5C5E61] dark:text-[#94A3B8] max-w-[829px] text-center">
             Don&apos;t take our word for it — hear from the teams we&apos;ve
             helped transform.
           </p>
@@ -210,7 +210,7 @@ export default function ClientStories() {
 
         {/* Social Proof Bar */}
         <motion.div
-          className="flex items-center justify-between p-[31.89px] mt-10 bg-white border border-[#E2E8F0] rounded-[24px] shadow-[0px_1px_2px_rgba(0,0,0,0.05)]"
+          className="flex items-center justify-between p-[31.89px] mt-10 bg-white dark:bg-[#1A2035] border border-[#E2E8F0] dark:border-white/10 rounded-[24px] shadow-[0px_1px_2px_rgba(0,0,0,0.05)]"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -218,7 +218,7 @@ export default function ClientStories() {
         >
           {/* Left text */}
           <div className="flex flex-col gap-[3.34px]">
-            <span className="text-[24px] font-semibold leading-[32px] text-[#0F172A]">
+            <span className="text-[24px] font-semibold leading-[32px] text-[#0F172A] dark:text-white">
               Join 50+ enterprises worldwide
             </span>
             <span className="text-[13.1px] font-normal leading-[20px] text-[#64748B]">
@@ -255,7 +255,7 @@ export default function ClientStories() {
 
             {/* Count */}
             <div className="flex flex-col">
-              <span className="text-[15.8px] font-black leading-[24px] text-[#0F172A]">
+              <span className="text-[15.8px] font-black leading-[24px] text-[#0F172A] dark:text-white">
                 +45 more
               </span>
               <span className="text-[11.1px] font-normal leading-[16px] text-[#64748B]">

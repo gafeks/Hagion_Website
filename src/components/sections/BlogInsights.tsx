@@ -34,7 +34,7 @@ const blogPosts = [
 
 export default function BlogInsights() {
   return (
-    <section className="w-full bg-white py-20">
+    <section className="w-full bg-white dark:bg-[#0B0F1A] py-20">
       {/* Header - aligned with page content */}
       <div className="max-w-[1232px] mx-auto px-6">
         <motion.div
@@ -54,12 +54,12 @@ export default function BlogInsights() {
           </div>
 
           {/* Heading */}
-          <h2 className="text-[46px] font-bold leading-[48px] tracking-[-1.2px] text-[#04041B] text-center">
+          <h2 className="text-[46px] font-bold leading-[48px] tracking-[-1.2px] text-[#04041B] dark:text-white text-center">
             Insights & Industry <span className="text-[#068653]">Updates</span>
           </h2>
 
           {/* Subtitle */}
-          <p className="text-[24px] font-normal leading-[32px] text-[#5C5E61] max-w-[686px] text-center">
+          <p className="text-[24px] font-normal leading-[32px] text-[#5C5E61] dark:text-[#94A3B8] max-w-[686px] text-center">
             Stay ahead with expert insights on digital transformation, AI automation, cybersecurity, and enterprise system design.
           </p>
         </motion.div>
@@ -146,10 +146,10 @@ export default function BlogInsights() {
         >
           <Link
             href="/blog"
-            className="inline-flex items-center justify-center gap-2 w-[204px] h-[54px] border border-[#050752] rounded-[12px] text-[13.2px] font-bold leading-[20px] text-[#050752] hover:bg-[#050752]/5 transition-colors"
+            className="inline-flex items-center justify-center gap-2 w-[204px] h-[54px] border border-[#050752] dark:border-white/20 rounded-[12px] text-[13.2px] font-bold leading-[20px] text-[#050752] dark:text-white hover:bg-[#050752]/5 dark:hover:bg-white/5 transition-colors"
           >
             Read More Articles
-            <ArrowUpRight size={16} className="text-[#050752]" />
+            <ArrowUpRight size={16} className="text-[#050752] dark:text-white" />
           </Link>
         </motion.div>
       </div>

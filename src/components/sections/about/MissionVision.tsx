@@ -5,14 +5,14 @@ import { motion } from "framer-motion";
 
 export default function MissionVision() {
   return (
-    <section className="relative w-full bg-[#F8FAFC] py-12 overflow-hidden isolate">
+    <section className="relative w-full bg-[#F8FAFC] dark:bg-[#0F1629] py-12 overflow-hidden isolate">
       {/* Decorative blur */}
-      <div className="absolute w-[500px] h-[500px] right-0 bottom-[160px] bg-[#050752]/[0.04] blur-[90px] rounded-full z-0" />
+      <div className="absolute w-[500px] h-[500px] right-0 bottom-[160px] bg-[#050752]/[0.04] dark:bg-[#068653]/[0.06] blur-[90px] rounded-full z-0" />
 
       <div className="max-w-[1231px] mx-auto px-6 relative z-[1]">
         {/* Section Heading */}
         <motion.h2
-          className="text-[46px] font-bold leading-[48px] tracking-[-1.2px] text-[#050752]"
+          className="text-[46px] font-bold leading-[48px] tracking-[-1.2px] text-[#050752] dark:text-white"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -53,10 +53,10 @@ export default function MissionVision() {
 
           {/* Text */}
           <div className="flex-1 pl-10 flex flex-col gap-[10px]">
-            <h3 className="text-[32px] font-medium leading-[150%] text-[#050752]">
+            <h3 className="text-[32px] font-medium leading-[150%] text-[#050752] dark:text-white">
               Our Mission
             </h3>
-            <p className="text-[24px] font-normal leading-[150%] text-[#5C5E61]">
+            <p className="text-[24px] font-normal leading-[150%] text-[#5C5E61] dark:text-[#94A3B8]">
               To design and deploy secure, intelligent, and scalable digital systems that empower organizations and accelerate Africa’s digital transform
             </p>
           </div>
@@ -72,10 +72,10 @@ export default function MissionVision() {
         >
           {/* Text */}
           <div className="flex-1 pr-10 flex flex-col gap-[10px]">
-            <h3 className="text-[32px] font-medium leading-[150%] text-[#050752]">
+            <h3 className="text-[32px] font-medium leading-[150%] text-[#050752] dark:text-white">
               Our Vision
             </h3>
-            <p className="text-[24px] font-normal leading-[160%] text-[#5C5E61]">
+            <p className="text-[24px] font-normal leading-[160%] text-[#5C5E61] dark:text-[#94A3B8]">
               To become a leading African technology powerhouse delivering enterprise-grade digital infrastructure that competes on a global scale.
             </p>
           </div>
