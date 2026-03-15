@@ -1,7 +1,13 @@
+import { ServicesHero, ServicesGrid } from "@/components/sections/services";
+import { Industries, CTA } from "@/components/sections";
+
 export default function ServicesPage() {
   return (
-    <div className="flex items-center justify-center py-20">
-      <h1 className="text-lg font-semibold">Services page goes here</h1>
+    <div className="overflow-x-hidden">
+      <ServicesHero />
+      <Industries />
+      <ServicesGrid />
+      <CTA />
     </div>
   );
 }

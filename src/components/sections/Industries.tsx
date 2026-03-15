@@ -23,7 +23,7 @@ export default function Industries() {
           transition={{ duration: 0.5 }}
         >
           <h2 className="text-[40px] font-semibold leading-[35px] text-center text-[#2D2555]">
-            Industries We Serve
+            <span className="text-[#068653]">Industries</span> We Serve
           </h2>
           <p className="text-[17.5px] font-normal leading-[24px] text-center text-[#5A5A5A]">
             We deliver specialized digital solutions across diverse industries
