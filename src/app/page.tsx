@@ -1,4 +1,4 @@
-import { Hero, WhatWeDo, Partners, Industries, HowWeWork, WhyHagion, CaseStudies } from "@/components/sections";
+import { Hero, WhatWeDo, Partners, Industries, HowWeWork, WhyHagion, CaseStudies, BlogInsights, ClientStories, CTA } from "@/components/sections";
 
 export default function Home() {
   return (
@@ -10,6 +10,9 @@ export default function Home() {
       <HowWeWork />
       <WhyHagion />
       <CaseStudies />
+      <BlogInsights />
+      <ClientStories />
+      <CTA />
     </div>
   );
 }

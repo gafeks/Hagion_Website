@@ -15,6 +15,7 @@ import {
   Platforms,
   Analytics,
   TaskStar,
+  ArrowUpRight,
 } from "@carbon/icons-react";
 
 const services = [
@@ -322,7 +323,7 @@ export default function WhatWeDo() {
               className="flex items-center justify-center gap-2 w-[204px] h-[54px] border border-[#050752] rounded-xl text-[13.2px] font-bold leading-[20px] text-[#050752] hover:bg-[#050752]/5 transition-colors"
             >
               Explore All Services
-              <ArrowRight size={16} />
+              <ArrowUpRight size={16} />
             </Link>
           </motion.div>
         </motion.div>

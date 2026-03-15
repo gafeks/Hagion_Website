@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Inter, Russo_One, Poppins } from "next/font/google";
+import { Inter, Russo_One, Poppins, Manrope } from "next/font/google";
 import { Navbar, Footer } from "@/components/layout";
 import "./globals.css";
 
@@ -20,6 +20,11 @@ const poppins = Poppins({
   variable: "--font-poppins",
 });
 
+const manrope = Manrope({
+  subsets: ["latin"],
+  variable: "--font-manrope",
+});
+
 export const metadata: Metadata = {
   title: "Hagion",
   description: "Hagion Website",
@@ -38,7 +43,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${inter.variable} ${russoOne.variable} ${poppins.variable} antialiased font-sans`}
+        className={`${inter.variable} ${russoOne.variable} ${poppins.variable} ${manrope.variable} antialiased font-sans`}
       >
         <Navbar />
         <main className="min-h-screen">{children}</main>

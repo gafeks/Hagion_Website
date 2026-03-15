@@ -3,7 +3,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { ArrowRight } from "@carbon/icons-react";
+import { ArrowRight, ArrowUpRight } from "@carbon/icons-react";
 
 const caseStudies = [
   {
@@ -110,7 +110,7 @@ export default function CaseStudies() {
               className="inline-flex items-center gap-2 px-[12.8px] py-[7.75px] bg-white border border-[#2D2555] rounded-[6.75px] text-[12.25px] font-medium leading-[18px] text-[#2D2555] hover:bg-[#2D2555]/5 transition-colors"
             >
               View Full Portfolio
-              <ArrowRight size={14} />
+              <ArrowUpRight size={14} />
             </Link>
           </motion.div>
         </div>
