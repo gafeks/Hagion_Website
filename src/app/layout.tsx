@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Inter, Russo_One, Poppins, Manrope } from "next/font/google";
 import { Navbar, Footer } from "@/components/layout";
+import SmoothScroll from "@/components/ui/SmoothScroll";
 import "./globals.css";
 
 const inter = Inter({
@@ -45,6 +46,7 @@ export default function RootLayout({
       <body
         className={`${inter.variable} ${russoOne.variable} ${poppins.variable} ${manrope.variable} antialiased font-sans`}
       >
+        <SmoothScroll />
         <Navbar />
         <main className="min-h-screen">{children}</main>
         <Footer />
