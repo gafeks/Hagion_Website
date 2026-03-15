@@ -2,16 +2,19 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
+import Marquee from "react-fast-marquee";
 
 const partners = [
   { src: "/images/fmcide.png", alt: "FMCIDE", width: 223, height: 80 },
   { src: "/images/nitda.png", alt: "NITDA", width: 202, height: 90 },
   { src: "/images/3mtt.jpg", alt: "3MTT", width: 179, height: 100 },
+  { src: "/images/partner-naanovo.jpeg", alt: "Naanovo", width: 200, height: 80 },
+  { src: "/images/partner-daar.jpeg", alt: "Daar", width: 200, height: 80 },
 ];
 
 export default function Partners() {
   return (
-    <section className="w-full bg-white py-20">
+    <section className="w-full bg-white py-20 overflow-hidden">
       <div className="max-w-[1232px] mx-auto px-6">
         <motion.div
           className="flex flex-col items-center gap-4"
@@ -32,19 +35,26 @@ export default function Partners() {
             OUR PARTNERS
           </h2>
         </motion.div>
+      </div>
 
-        <motion.div
-          className="flex items-center justify-center gap-16 mt-10"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5, delay: 0.2 }}
+      <motion.div
+        className="mt-10 overflow-hidden"
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.5, delay: 0.2 }}
+      >
+        <Marquee
+          speed={40}
+          gradient
+          gradientColor="white"
+          gradientWidth={100}
+          pauseOnHover
         >
           {partners.map((partner, i) => (
-            <motion.div
+            <div
               key={i}
-              whileHover={{ scale: 1.05 }}
-              transition={{ type: "spring", stiffness: 300, damping: 20 }}
+              className="mx-12 flex items-center justify-center h-[100px]"
             >
               <Image
                 src={partner.src}
@@ -53,10 +63,10 @@ export default function Partners() {
                 height={partner.height}
                 className="object-contain"
               />
-            </motion.div>
+            </div>
           ))}
-        </motion.div>
-      </div>
+        </Marquee>
+      </motion.div>
     </section>
   );
 }

@@ -32,3 +32,18 @@ body {
 .scrollbar-hide::-webkit-scrollbar {
   display: none;
 }
+
+/* Hide scrollbar inside react-fast-marquee */
+.rfm-marquee-container {
+  overflow-y: hidden !important;
+}
+.rfm-marquee-container::-webkit-scrollbar {
+  display: none;
+}
+.rfm-marquee-container * {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.rfm-marquee-container *::-webkit-scrollbar {
+  display: none;
+}
