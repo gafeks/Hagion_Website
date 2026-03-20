@@ -1,4 +1,4 @@
-name: Build & Deploy to FTP
+name: Deploy Website to Hostinger
 
 on:
   push:
@@ -7,6 +7,7 @@ on:
 
 jobs:
   deploy:
+    name: Build & Upload to Hostinger
     runs-on: ubuntu-latest
 
     steps:
@@ -29,7 +30,7 @@ jobs:
       - name: Build static site
         run: pnpm build
 
-      - name: Deploy to FTP
+      - name: Deploy via FTP
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
         with:
           server: ${{ secrets.FTP_SERVER }}
