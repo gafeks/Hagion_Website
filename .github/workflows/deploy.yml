@@ -1,4 +1,4 @@
-name: Deploy Website to Hostinger
+name: Deploy Website
 
 on:
   push:
@@ -7,35 +7,28 @@ on:
 
 jobs:
   deploy:
-    name: Build & Upload to Hostinger
     runs-on: ubuntu-latest
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@v4
-
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: 22
-
-      - name: Install pnpm
-        uses: pnpm/action-setup@v4
+        uses: actions/checkout@v3
 
       - name: Install dependencies
-        run: pnpm install --frozen-lockfile
+        run: npm install
 
-      - name: Build static site
-        run: pnpm build
+      - name: Build Next.js project
+        run: npm run build
 
-      - name: Deploy via FTP
-        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+      - name: Export static files
+        run: npx next export
+
+      - name: Deploy to Hostinger
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.4
         with:
           server: ${{ secrets.FTP_SERVER }}
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
+          port: 21
           local-dir: ./out/
           server-dir: /public_html/
-          protocol: ftps
-          port: 21
           dangerous-clean-slate: true
