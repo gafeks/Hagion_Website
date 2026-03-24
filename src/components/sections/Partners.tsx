@@ -11,6 +11,7 @@ const partners = [
   { src: "/images/3mtt.jpg", alt: "3MTT", width: 179, height: 100 },
   { src: "/images/partner-naanovo.jpeg", alt: "Naanovo", width: 200, height: 80 },
   { src: "/images/partner-daar.jpeg", alt: "Daar", width: 200, height: 80 },
+  { src: "/images/wastewise-logo.png", alt: "WasteWise", width: 200, height: 80 },
 ];
 
 export default function Partners() {

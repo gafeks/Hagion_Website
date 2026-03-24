@@ -1,4 +1,4 @@
-import { AboutHero, StatsBar, CoreValues, OurHistory, MissionVision, Team } from "@/components/sections/about";
+import { AboutHero, StatsBar, CoreValues, OurHistory, MissionVision, Membership, FeaturedClients, Team } from "@/components/sections/about";
 import { CTA } from "@/components/sections";
 
 export default function AboutPage() {
@@ -9,6 +9,8 @@ export default function AboutPage() {
       <CoreValues />
       <OurHistory />
       <MissionVision />
+      <Membership />
+      <FeaturedClients />
       <Team />
       <CTA />
     </div>

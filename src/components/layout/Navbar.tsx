@@ -15,7 +15,6 @@ const navLinks = [
   { label: "Portfolio", href: "/portfolio" },
   { label: "Blog", href: "/blog" },
   { label: "Request Quote", href: "/request-quote" },
-  { label: "Contact", href: "/contact" },
 ];
 
 export default function Navbar() {
@@ -105,10 +104,10 @@ export default function Navbar() {
               transition={{ type: "spring", stiffness: 400, damping: 20 }}
             >
               <Link
-                href="/get-started"
+                href="/contact"
                 className="flex items-center justify-center w-[115px] h-[37px] px-3 bg-[#2D2555] dark:bg-[#068653] text-white text-[13.3px] font-medium leading-[20px] rounded-lg hover:bg-[#231d45] dark:hover:bg-[#057a4a] transition-colors"
               >
-                Get Started
+                Contact Us
               </Link>
             </motion.div>
           </div>
@@ -185,11 +184,11 @@ export default function Navbar() {
                 className="mt-4"
               >
                 <Link
-                  href="/get-started"
+                  href="/contact"
                   onClick={() => setMobileMenuOpen(false)}
                   className="flex items-center justify-center w-full h-[48px] bg-[#2D2555] dark:bg-[#068653] text-white text-[15px] font-medium rounded-lg hover:bg-[#231d45] dark:hover:bg-[#057a4a] transition-colors"
                 >
-                  Get Started
+                  Contact Us
                 </Link>
               </motion.div>
             </div>
