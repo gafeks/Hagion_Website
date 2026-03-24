@@ -36,26 +36,26 @@ export default function CoreValues() {
   const isDark = theme === "dark";
 
   return (
-    <section className="w-full bg-[#F8FCFF] dark:bg-[#0F1629] py-20">
-      <div className="max-w-[1231px] mx-auto px-6">
+    <section className="w-full bg-[#F8FCFF] dark:bg-[#0F1629] py-12 lg:py-20">
+      <div className="max-w-[1231px] mx-auto px-8 lg:px-6">
         {/* Header */}
         <motion.div
-          className="flex flex-col items-center gap-4"
+          className="flex flex-col items-center gap-2 lg:gap-4"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
         >
-          <h2 className="text-[46px] font-bold leading-[40px] text-[#101828] dark:text-white text-center">
+          <h2 className="text-[24px] lg:text-[46px] font-bold leading-[40px] text-[#101828] dark:text-white text-center">
             Our Core <span className="text-[#2D2555] dark:text-[#068653]">Values</span>
           </h2>
-          <p className="text-[24px] font-normal leading-[28px] text-[#4A5565] dark:text-[#94A3B8] text-center">
+          <p className="text-[12px] lg:text-[24px] font-normal leading-[28px] text-[#4A5565] dark:text-[#94A3B8] text-center">
             The principles that guide everything we do
           </p>
         </motion.div>
 
         {/* Cards */}
-        <div className="flex gap-8 mt-16">
+        <div className="flex flex-col lg:flex-row gap-4 lg:gap-8 mt-5 lg:mt-16">
           {values.map((value, index) => (
             <motion.div
               key={value.title}

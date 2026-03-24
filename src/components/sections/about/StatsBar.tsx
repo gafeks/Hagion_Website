@@ -12,8 +12,8 @@ const stats = [
 export default function StatsBar() {
   return (
     <section className="w-full bg-black dark:bg-[#060912] py-5">
-      <div className="max-w-[1235px] mx-auto px-6">
-        <div className="flex gap-8">
+      <div className="max-w-[1235px] mx-auto px-5 lg:px-6">
+        <div className="grid grid-cols-2 gap-8 lg:flex">
           {stats.map((stat, index) => (
             <motion.div
               key={stat.label}
@@ -23,10 +23,10 @@ export default function StatsBar() {
               viewport={{ once: true }}
               transition={{ duration: 0.4, delay: 0.1 * index }}
             >
-              <span className="text-[34px] font-semibold leading-[48px] text-white">
+              <span className="text-[34px] lg:text-[34px] font-semibold leading-[48px] text-white text-center">
                 {stat.number}
               </span>
-              <span className="text-[14px] font-normal leading-[24px] text-white/80">
+              <span className="text-[14px] font-normal leading-[24px] text-white/80 text-center">
                 {stat.label}
               </span>
             </motion.div>

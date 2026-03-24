@@ -1,7 +1,11 @@
+import BlogHero from "@/components/sections/blog/BlogHero";
+import BlogContent from "@/components/sections/blog/BlogContent";
+
 export default function BlogPage() {
   return (
-    <div className="flex items-center justify-center py-20">
-      <h1 className="text-lg font-semibold">Blog page goes here</h1>
-    </div>
+    <>
+      <BlogHero />
+      <BlogContent />
+    </>
   );
 }

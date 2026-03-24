@@ -164,11 +164,11 @@ function TestimonialCard({
 
 export default function ClientStories() {
   return (
-    <section className="w-full bg-[#F1F7FC] dark:bg-[#0F1629] py-20">
+    <section className="w-full bg-[#F1F7FC] dark:bg-[#0F1629] py-12 lg:py-20">
       <div className="max-w-[1232px] mx-auto px-6">
         {/* Header */}
         <motion.div
-          className="flex flex-col items-center gap-4"
+          className="flex flex-col items-center gap-2.5 lg:gap-4"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -184,12 +184,12 @@ export default function ClientStories() {
           </div>
 
           {/* Heading */}
-          <h2 className="text-[46px] font-bold leading-[48px] tracking-[-1.2px] text-[#0F172A] dark:text-white text-center">
+          <h2 className="text-[20px] lg:text-[46px] font-bold leading-[48px] lg:leading-[48px] tracking-[-1.2px] text-[#0F172A] dark:text-white text-center">
             Trusted by industry leaders
           </h2>
 
           {/* Subtitle */}
-          <p className="text-[24px] font-normal leading-[29px] text-[#5C5E61] dark:text-[#94A3B8] max-w-[829px] text-center">
+          <p className="text-[12px] lg:text-[24px] font-normal leading-[16px] lg:leading-[29px] text-[#5C5E61] dark:text-[#94A3B8] max-w-[231px] lg:max-w-[829px] text-center">
             Don&apos;t take our word for it — hear from the teams we&apos;ve
             helped transform.
           </p>
@@ -197,7 +197,7 @@ export default function ClientStories() {
 
         {/* Testimonial Cards */}
         <motion.div
-          className="flex gap-6 mt-12"
+          className="flex flex-col lg:flex-row gap-6 mt-8 lg:mt-12"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -210,18 +210,18 @@ export default function ClientStories() {
 
         {/* Social Proof Bar */}
         <motion.div
-          className="flex items-center justify-between p-[31.89px] mt-10 bg-white dark:bg-[#1A2035] border border-[#E2E8F0] dark:border-white/10 rounded-[24px] shadow-[0px_1px_2px_rgba(0,0,0,0.05)]"
+          className="flex flex-col lg:flex-row items-center lg:justify-between gap-4 lg:gap-0 p-6 lg:p-[31.89px] mt-8 lg:mt-10 bg-white dark:bg-[#1A2035] border border-[#E2E8F0] dark:border-white/10 rounded-2xl lg:rounded-[24px] shadow-[0px_1px_2px_rgba(0,0,0,0.05)]"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.3 }}
         >
           {/* Left text */}
-          <div className="flex flex-col gap-[3.34px]">
-            <span className="text-[24px] font-semibold leading-[32px] text-[#0F172A] dark:text-white">
+          <div className="flex flex-col gap-[3.34px] text-center lg:text-left">
+            <span className="text-[18px] lg:text-[24px] font-semibold leading-[24px] lg:leading-[32px] text-[#0F172A] dark:text-white">
               Join 50+ enterprises worldwide
             </span>
-            <span className="text-[13.1px] font-normal leading-[20px] text-[#64748B]">
+            <span className="text-[12px] lg:text-[13.1px] font-normal leading-[16px] lg:leading-[20px] text-[#64748B]">
               that trust Hagion for their technology needs
             </span>
           </div>
@@ -239,7 +239,7 @@ export default function ClientStories() {
               ].map((src, i) => (
                 <div
                   key={i}
-                  className="w-[44px] h-[44px] rounded-full overflow-hidden shadow-[0px_0px_0px_2px_#FFFFFF] shrink-0"
+                  className="w-[36px] h-[36px] lg:w-[44px] lg:h-[44px] rounded-full overflow-hidden shadow-[0px_0px_0px_2px_#FFFFFF] shrink-0"
                   style={{ marginLeft: i === 0 ? 0 : -12 }}
                 >
                   <Image

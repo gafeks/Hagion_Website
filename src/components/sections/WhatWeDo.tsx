@@ -248,21 +248,20 @@ function ServiceCardsSlider() {
   };
 
   return (
-    <div className="relative mt-10">
-      {/* Left Arrow */}
+    <div className="relative mt-6 lg:mt-10">
+      {/* Desktop Arrows — sides */}
       <motion.button
         onClick={() => scroll("left")}
-        className="absolute left-4 top-1/2 -translate-y-1/2 z-10 flex items-center justify-center w-[44px] h-[44px] rounded-full bg-white dark:bg-[#1A2035] border border-gray-200 dark:border-white/10 shadow-md text-[#050752] dark:text-white hover:bg-gray-50 dark:hover:bg-[#1A2035]/80 transition-colors"
+        className="hidden lg:flex absolute left-4 top-1/2 -translate-y-1/2 z-10 items-center justify-center w-[44px] h-[44px] rounded-full bg-white dark:bg-[#1A2035] border border-gray-200 dark:border-white/10 shadow-md text-[#050752] dark:text-white hover:bg-gray-50 dark:hover:bg-[#1A2035]/80 transition-colors"
         whileHover={{ scale: 1.1 }}
         whileTap={{ scale: 0.95 }}
       >
         <ArrowLeft size={20} />
       </motion.button>
 
-      {/* Right Arrow */}
       <motion.button
         onClick={() => scroll("right")}
-        className="absolute right-4 top-1/2 -translate-y-1/2 z-10 flex items-center justify-center w-[44px] h-[44px] rounded-full bg-white dark:bg-[#1A2035] border border-gray-200 dark:border-white/10 shadow-md text-[#050752] dark:text-white hover:bg-gray-50 dark:hover:bg-[#1A2035]/80 transition-colors"
+        className="hidden lg:flex absolute right-4 top-1/2 -translate-y-1/2 z-10 items-center justify-center w-[44px] h-[44px] rounded-full bg-white dark:bg-[#1A2035] border border-gray-200 dark:border-white/10 shadow-md text-[#050752] dark:text-white hover:bg-gray-50 dark:hover:bg-[#1A2035]/80 transition-colors"
         whileHover={{ scale: 1.1 }}
         whileTap={{ scale: 0.95 }}
       >
@@ -280,38 +279,58 @@ function ServiceCardsSlider() {
           ))}
         </div>
       </div>
+
+      {/* Mobile Arrows — bottom center */}
+      <div className="flex lg:hidden items-center justify-center gap-3 mt-4">
+        <motion.button
+          onClick={() => scroll("left")}
+          className="flex items-center justify-center w-[40px] h-[40px] rounded-full bg-white dark:bg-[#1A2035] border border-gray-200 dark:border-white/10 shadow-md text-[#050752] dark:text-white"
+          whileTap={{ scale: 0.95 }}
+        >
+          <ArrowLeft size={18} />
+        </motion.button>
+        <motion.button
+          onClick={() => scroll("right")}
+          className="flex items-center justify-center w-[40px] h-[40px] rounded-full bg-white dark:bg-[#1A2035] border border-gray-200 dark:border-white/10 shadow-md text-[#050752] dark:text-white"
+          whileTap={{ scale: 0.95 }}
+        >
+          <ArrowRight size={18} />
+        </motion.button>
+      </div>
     </div>
   );
 }
 
 export default function WhatWeDo() {
   return (
-    <section className="w-full bg-[#F5F8FF] dark:bg-[#0F1629] py-20">
-      <div className="max-w-[1232px] mx-auto px-6">
+    <section className="w-full bg-[#F5F8FF] dark:bg-[#0F1629] py-12 lg:py-20">
+      <div className="max-w-[1232px] mx-auto px-5 lg:px-6">
         {/* Section Header */}
         <motion.div
-          className="flex flex-col items-center gap-4 max-w-[470px] mx-auto"
+          className="flex flex-col items-center gap-4 lg:gap-4 max-w-[350px] lg:max-w-[470px] mx-auto"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
         >
           {/* Label with dividers */}
-          <div className="flex items-center justify-center gap-3 w-full">
-            <div className="w-8 h-[2px] bg-[#068653] rounded-full" />
-            <span className="text-[13.9px] font-bold leading-[20px] tracking-[1.4px] uppercase text-[#068653]">
-              What We Do
-            </span>
-            <div className="w-8 h-[2px] bg-[#068653] rounded-full" />
+          <div className="flex flex-col items-center gap-1">
+            <div className="flex items-center justify-center gap-3">
+              <div className="w-8 h-[2px] bg-[#068653] rounded-full" />
+              <span className="text-[10px] lg:text-[13.9px] font-bold leading-[20px] tracking-[1.4px] uppercase text-[#068653]">
+                What We Do
+              </span>
+              <div className="w-8 h-[2px] bg-[#068653] rounded-full" />
+            </div>
+
+            {/* Heading */}
+            <h2 className="text-[20px] lg:text-[46px] font-bold leading-[48px] tracking-[-1.2px] text-[#0F172A] dark:text-white text-center">
+              OUR CORE SERVICES
+            </h2>
           </div>
 
-          {/* Heading */}
-          <h2 className="text-[46px] font-bold leading-[48px] tracking-[-1.2px] text-[#0F172A] dark:text-white text-center">
-            OUR CORE SERVICES
-          </h2>
-
           {/* Subtitle */}
-          <p className="text-[16px] font-normal leading-[29px] text-center text-[#5C5E61] dark:text-[#94A3B8]">
+          <p className="text-[12px] lg:text-[16px] font-normal leading-[29px] text-center text-[#5C5E61] dark:text-[#94A3B8]">
             Comprehensive Technology Solutions Built for Scale
           </p>
 
@@ -323,7 +342,7 @@ export default function WhatWeDo() {
           >
             <Link
               href="/services"
-              className="flex items-center justify-center gap-2 w-[204px] h-[54px] border border-[#050752] dark:border-white/20 rounded-xl text-[13.2px] font-bold leading-[20px] text-[#050752] dark:text-white hover:bg-[#050752]/5 dark:hover:bg-white/5 transition-colors"
+              className="flex items-center justify-center gap-2 w-[204px] h-[40px] lg:h-[54px] border border-[#050752] dark:border-white/20 rounded-xl text-[13.2px] font-bold leading-[20px] text-[#050752] dark:text-white hover:bg-[#050752]/5 dark:hover:bg-white/5 transition-colors"
             >
               Explore All Services
               <ArrowUpRight size={16} />
