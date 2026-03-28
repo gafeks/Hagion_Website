@@ -42,12 +42,12 @@ export default function AfterSubmit() {
           transition={{ duration: 0.5 }}
         >
           {/* Heading */}
-          <h2 className="text-[24px] lg:text-[48px] font-medium leading-[36px] lg:leading-[36px] text-[#101828] dark:text-white text-center">
+          <h2 className="text-[20px] lg:text-[48px] font-medium leading-[36px] text-[#101828] dark:text-white text-center">
             What Happens After You Submit?
           </h2>
 
           {/* Cards */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 lg:grid-cols-4 gap-6">
             {steps.map((step, i) => (
               <motion.div
                 key={step.number}

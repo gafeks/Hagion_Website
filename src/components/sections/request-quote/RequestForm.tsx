@@ -75,27 +75,28 @@ export default function RequestForm() {
           <div className="w-full lg:w-[373px] shrink-0 flex flex-col gap-6">
             {/* Why Work With Hagion */}
             <motion.div
-              className="bg-[#F9FAFB] dark:bg-[#1A2035] border border-[#E5E7EB] dark:border-white/10 rounded-[14px] p-6"
+              className="bg-[#F9FAFB] dark:bg-[#1A2035] border border-[#E5E7EB] dark:border-white/10 rounded-[13px] lg:rounded-[14px] p-[22px] lg:p-6"
               initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5 }}
             >
-              <h3 className="text-[20px] font-semibold leading-[28px] text-[#2D2555] dark:text-white">
+              <h3 className="text-[19px] lg:text-[20px] font-semibold leading-[26px] lg:leading-[28px] text-[#2D2555] dark:text-white">
                 Why Work With Hagion?
               </h3>
-              <div className="flex flex-col gap-3 mt-4">
+              <div className="flex flex-col gap-[11px] lg:gap-3 mt-[15px] lg:mt-4">
                 {whyItems.map((item) => (
-                  <div key={item} className="flex items-start gap-3">
-                    <CheckmarkOutline size={16} className="text-[#10B981] mt-0.5 shrink-0" />
-                    <span className="text-[14px] leading-[20px] text-[#4A5565] dark:text-[#94A3B8]">
+                  <div key={item} className="flex items-start gap-[11px] lg:gap-3">
+                    <CheckmarkOutline size={15} className="text-[#10B981] mt-0.5 shrink-0 lg:hidden" />
+                    <CheckmarkOutline size={16} className="text-[#10B981] mt-0.5 shrink-0 hidden lg:block" />
+                    <span className="text-[13px] lg:text-[14px] leading-[19px] lg:leading-[20px] text-[#4A5565] dark:text-[#94A3B8]">
                       {item}
                     </span>
                   </div>
                 ))}
               </div>
-              <div className="border-t border-[#E5E7EB] dark:border-white/10 mt-4 pt-4">
-                <p className="text-[12px] leading-[16px] text-[#6A7282] dark:text-[#94A3B8]">
+              <div className="border-t border-[#E5E7EB] dark:border-white/10 mt-[15px] lg:mt-4 pt-[15px] lg:pt-4">
+                <p className="text-[11px] lg:text-[12px] leading-[15px] lg:leading-[16px] text-[#6A7282] dark:text-[#94A3B8]">
                   Every request is reviewed by our strategy and technical team to ensure you receive a solution aligned with your objectives
                 </p>
               </div>
@@ -103,22 +104,23 @@ export default function RequestForm() {
 
             {/* Government Card */}
             <motion.div
-              className="bg-[#10B981]/5 border border-[#BCFFE9] dark:border-[#10B981]/30 rounded-[14px] p-6"
+              className="bg-[#10B981]/5 border border-[#BCFFE9] dark:border-[#10B981]/30 rounded-[13px] lg:rounded-[14px] p-[22px] lg:p-6 flex flex-col gap-[11px] lg:gap-3"
               initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.1 }}
             >
               <div className="flex items-center gap-2">
-                <Email size={20} className="text-[#10B981]" />
-                <h3 className="text-[16px] font-medium leading-[24px] text-[#2D2555] dark:text-white">
+                <Email size={19} className="text-[#10B981] lg:hidden" />
+                <Email size={20} className="text-[#10B981] hidden lg:block" />
+                <h3 className="text-[15px] lg:text-[16px] font-medium leading-[23px] lg:leading-[24px] text-[#2D2555] dark:text-white">
                   For Government & Large Organization
                 </h3>
               </div>
-              <p className="mt-3 text-[14px] leading-[20px] text-[#4A5565] dark:text-[#94A3B8]">
+              <p className="text-[13px] lg:text-[14px] leading-[19px] lg:leading-[20px] text-[#4A5565] dark:text-[#94A3B8]">
                 If you are submitting a formal Request for Proposal (RFP), Expression of Interest (EOI), or institutional documentation, please email directly:
               </p>
-              <a href="mailto:proposals@hagionintl.com" className="mt-2 inline-block text-[14px] leading-[20px] text-[#10B981] hover:underline">
+              <a href="mailto:proposals@hagionintl.com" className="text-[13px] lg:text-[14px] leading-[19px] lg:leading-[20px] text-[#10B981] hover:underline">
                 proposals@hagionintl.com
               </a>
             </motion.div>
@@ -135,7 +137,7 @@ export default function RequestForm() {
             <form onSubmit={handleSubmit} className="flex flex-col gap-8">
               {/* Section 1: Contact Information */}
               <div className="flex flex-col gap-5">
-                <h3 className="text-[18px] font-semibold leading-[28px] text-[#101828] dark:text-white pb-2">
+                <h3 className="text-[14px] lg:text-[18px] font-semibold leading-[28px] text-[#101828] dark:text-white pb-2">
                   Section 1: Contact Information
                 </h3>
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-5">
@@ -149,12 +151,12 @@ export default function RequestForm() {
 
               {/* Section 2: Project Information */}
               <div className="flex flex-col gap-5">
-                <h3 className="text-[18px] font-semibold leading-[28px] text-[#101828] dark:text-white pb-2">
+                <h3 className="text-[14px] lg:text-[18px] font-semibold leading-[28px] text-[#101828] dark:text-white pb-2">
                   Section 2: Project Information
                 </h3>
                 <SelectField label="Type of Service Required *" name="service" placeholder="Select a service" options={serviceOptions} value={formData.service} onChange={handleChange} />
                 <div className="flex flex-col gap-2">
-                  <label className="text-[14px] font-semibold leading-[14px] text-[#2D2555] dark:text-white">
+                  <label className="text-[12px] lg:text-[14px] font-medium lg:font-semibold leading-[14px] text-[#2D2555] dark:text-white">
                     Project Description *
                   </label>
                   <textarea
@@ -163,7 +165,7 @@ export default function RequestForm() {
                     value={formData.description}
                     onChange={handleChange}
                     rows={3}
-                    className="w-full px-3 py-2 bg-white border border-[#E1E7EF] dark:border-white/20 rounded-lg text-[14px] text-gray-900 placeholder:text-[#717182] outline-none resize-none"
+                    className="w-full px-3 py-2 bg-white border border-[#E1E7EF] dark:border-white/20 rounded-lg text-[10px] lg:text-[14px] text-gray-900 placeholder:text-[#717182] outline-none resize-none"
                   />
                 </div>
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-5">
@@ -175,7 +177,7 @@ export default function RequestForm() {
 
               {/* Section 3: Additional Details */}
               <div className="flex flex-col gap-5">
-                <h3 className="text-[18px] font-semibold leading-[28px] text-[#101828] dark:text-white pb-2">
+                <h3 className="text-[14px] lg:text-[18px] font-semibold leading-[28px] text-[#101828] dark:text-white pb-2">
                   Section 3: Additional Details
                 </h3>
                 <SelectField label="Do you have existing systems to integrate?" name="existingSystems" placeholder="Select an option" options={yesNoOptions} value={formData.existingSystems} onChange={handleChange} />
@@ -183,12 +185,12 @@ export default function RequestForm() {
 
                 {/* File Upload */}
                 <div className="flex flex-col gap-2">
-                  <label className="text-[14px] font-semibold leading-[14px] text-[#2D2555] dark:text-white">
+                  <label className="text-[12px] lg:text-[14px] font-medium lg:font-semibold leading-[14px] text-[#2D2555] dark:text-white">
                     File Upload (Optional – PRD, RFQ Document, Concept Notes)
                   </label>
                   <div className="flex flex-col items-center justify-center py-5 px-6 bg-[#F9FAFB] dark:bg-[#1A2035] border border-dashed border-[#D1D5DC] dark:border-white/20 rounded-[10px]">
                     <Upload size={20} className="text-[#4A5565] dark:text-[#94A3B8] mb-2" />
-                    <p className="text-[14px] leading-[20px] text-[#4A5565] dark:text-[#94A3B8] text-center">
+                    <p className="text-[12px] lg:text-[14px] leading-[20px] text-[#4A5565] dark:text-[#94A3B8] text-center">
                       Drag and drop files here, or <span className="text-[#10B981]">browse</span>
                     </p>
                     <p className="text-[12px] leading-[16px] text-[#99A1AF] text-center">
@@ -202,12 +204,12 @@ export default function RequestForm() {
               <div className="flex flex-col items-center gap-3">
                 <button
                   type="submit"
-                  className="w-full flex items-center justify-center gap-2 h-[48px] bg-[#2D2555] dark:bg-[#068653] text-white text-[14px] font-semibold rounded-lg hover:bg-[#231d45] dark:hover:bg-[#057a4a] transition-colors"
+                  className="w-full flex items-center justify-center gap-2 h-[48px] bg-[#2D2555] dark:bg-[#068653] text-white text-[12px] lg:text-[14px] font-medium lg:font-semibold rounded-lg hover:bg-[#231d45] dark:hover:bg-[#057a4a] transition-colors"
                 >
                   Submit Request
                   <Send size={16} />
                 </button>
-                <p className="text-[12px] leading-[16px] text-[#2D2555] dark:text-[#94A3B8] text-center">
+                <p className="text-[10px] lg:text-[12px] leading-[16px] text-[#2D2555] dark:text-[#94A3B8] text-center">
                   By submitting this form, you agree to our privacy and data protection policies.
                 </p>
               </div>
@@ -225,7 +227,7 @@ function FormField({ label, name, type = "text", placeholder, value, onChange }:
 }) {
   return (
     <div className="flex flex-col gap-2">
-      <label className="text-[14px] font-medium leading-[14px] text-[#2D2555] dark:text-white">
+      <label className="text-[12px] lg:text-[14px] font-medium leading-[14px] text-[#2D2555] dark:text-white">
         {label}
       </label>
       <input
@@ -234,7 +236,7 @@ function FormField({ label, name, type = "text", placeholder, value, onChange }:
         placeholder={placeholder}
         value={value}
         onChange={onChange}
-        className="w-full h-[36px] px-3 bg-white border border-[#E1E7EF] dark:border-white/20 rounded-lg text-[14px] text-gray-900 placeholder:text-[#717182] outline-none"
+        className="w-full h-[36px] px-3 bg-white border border-[#E1E7EF] dark:border-white/20 rounded-lg text-[12px] lg:text-[14px] text-gray-900 placeholder:text-[#717182] outline-none"
       />
     </div>
   );
@@ -246,14 +248,14 @@ function SelectField({ label, name, placeholder, options, value, onChange }: {
 }) {
   return (
     <div className="flex flex-col gap-2">
-      <label className="text-[14px] font-semibold leading-[14px] text-[#2D2555] dark:text-white">
+      <label className="text-[12px] lg:text-[14px] font-medium lg:font-semibold leading-[14px] text-[#2D2555] dark:text-white">
         {label}
       </label>
       <select
         name={name}
         value={value}
         onChange={onChange}
-        className="w-full h-[36px] px-3 bg-white border border-[#E1E7EF] dark:border-white/20 rounded-lg text-[14px] text-gray-900 appearance-none outline-none"
+        className="w-full h-[36px] px-3 bg-white border border-[#E1E7EF] dark:border-white/20 rounded-lg text-[12px] lg:text-[14px] text-gray-900 appearance-none outline-none"
       >
         <option value="" disabled className="text-[#717182]">{placeholder}</option>
         {options.map((opt) => (
