@@ -17,28 +17,34 @@ const team = [
     image: "/images/team-gift.jpeg",
   },
   {
-    name: "Edum Kiikpoye",
-    role: "Technical Lead",
-    bio: "Edum Kiikpoye serves as the Technical Lead at Hagion International Ltd, overseeing system architecture, software engineering standards, and product scalability frameworks.",
-    image: "/images/team-kikpoye.jpeg",
-  },
-  {
     name: "Prosper Ikiriko",
     role: "Head of Operations",
     bio: "Prosper Ikiriko leads operational strategy, internal workflow optimization, and project coordination at Hagion International Ltd.",
     image: "/images/team-prosper.jpeg",
   },
   {
-    name: "Nwaerema Jacob",
-    role: "Back End Developer",
-    bio: "Nwaerema Cyprian Jacob serves as a Back End Developer at Hagion International Ltd, responsible for building and maintaining server-side applications, APIs, and database systems.",
-    image: "/images/team-jacob.jpeg",
-  },
-  {
     name: "Oshor Blessing",
     role: "Human Resource Manager (HRM)",
     bio: "Oshor Blessing serves as the Human Resource Manager at Hagion International Ltd, overseeing talent acquisition, staff development, performance management, and workplace culture.",
     image: "/images/team-blessing.jpeg",
+  },
+  {
+    name: "Edum Kiikpoye",
+    role: "Technical Lead",
+    bio: "Edum Kiikpoye serves as the Technical Lead at Hagion International Ltd, overseeing system architecture, software engineering standards, and product scalability frameworks.",
+    image: "/images/team-kikpoye.jpeg",
+  },
+  {
+    name: "Nnaemeka Chimezie",
+    role: "Senior Front-End Developer",
+    bio: "Nnaemeka Chimezie serves as a Senior Front-End Developer at Hagion International Ltd, leading the design and development of responsive, user-facing interfaces across the company's enterprise platforms and client products using React, Next.js, and modern web technologies.",
+    image: "/images/team-nnaemeka.jpeg",
+  },
+  {
+    name: "Nwaerema Jacob",
+    role: "Back End Developer",
+    bio: "Nwaerema Cyprian Jacob serves as a Back End Developer at Hagion International Ltd, responsible for building and maintaining server-side applications, APIs, and database systems.",
+    image: "/images/team-jacob.jpeg",
   },
 ];
 
