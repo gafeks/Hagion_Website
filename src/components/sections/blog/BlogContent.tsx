@@ -96,26 +96,26 @@ export default function BlogContent() {
   const [activeCategory, setActiveCategory] = useState("All");
 
   return (
-    <section className="w-full bg-white dark:bg-[#0B0F1A] py-10">
-      <div className="max-w-[1231px] mx-auto px-6 flex flex-col gap-6">
+    <section className="w-full bg-white dark:bg-[#0B0F1A] py-5 lg:py-10">
+      <div className="max-w-[1231px] mx-auto px-5 lg:px-6 flex flex-col gap-5 lg:gap-6">
         {/* ── Header ── */}
         <motion.div
-          className="flex flex-col gap-[2px]"
+          className="flex flex-col gap-5 lg:gap-[2px]"
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, ease: "easeOut" }}
         >
           {/* Label */}
           <div className="flex items-center gap-3">
-            <div className="w-8 h-[2px] bg-[#10B981] rounded-full" />
-            <span className="text-[14px] font-semibold leading-[20px] tracking-[1.4px] uppercase text-[#10B981]">
+            <div className="w-8 h-[2px] bg-[#068653] lg:bg-[#10B981] rounded-full" />
+            <span className="text-[10px] lg:text-[14px] font-semibold leading-[20px] tracking-[2.4px] lg:tracking-[1.4px] uppercase text-[#068653] lg:text-[#10B981]">
               Knowledge Hub
             </span>
           </div>
 
           {/* Heading */}
           <motion.h2
-            className="mt-2 text-[28px] sm:text-[36px] md:text-[48px] font-semibold leading-[140%] capitalize text-[#2D2555] dark:text-white"
+            className="text-[32px] lg:text-[48px] font-semibold leading-[130%] lg:leading-[140%] tracking-[0.01em] capitalize text-[#2D2555] dark:text-white"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.2 }}
@@ -125,7 +125,7 @@ export default function BlogContent() {
 
           {/* Paragraph */}
           <motion.p
-            className="mt-2 text-[16px] sm:text-[20px] md:text-[24px] font-normal leading-[170%] text-[#5A5A5A] dark:text-[#94A3B8] max-w-[686px]"
+            className="text-[12px] lg:text-[24px] font-normal leading-[170%] tracking-[0.01em] text-[#676665] lg:text-[#5A5A5A] dark:text-[#94A3B8] lg:max-w-[686px]"
             initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.3 }}
@@ -136,26 +136,24 @@ export default function BlogContent() {
 
         {/* ── Tabs ── */}
         <motion.div
-          className="flex items-center py-5 gap-2.5 rounded-xl overflow-x-auto"
+          className="flex flex-wrap lg:flex-nowrap items-center py-2 lg:py-5 gap-[10px] lg:gap-2.5 rounded-xl lg:overflow-x-auto"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.35 }}
         >
-          <div className="flex items-start gap-2.5 flex-nowrap">
-            {categories.map((cat) => (
-              <button
-                key={cat}
-                onClick={() => setActiveCategory(cat)}
-                className={`shrink-0 px-5 py-2 rounded-full text-[14px] font-medium capitalize transition-colors ${
-                  activeCategory === cat
-                    ? "bg-[#2D2555] text-white dark:bg-[#10B981]"
-                    : "bg-white dark:bg-transparent border border-[#2D2555] dark:border-[#94A3B8]/30 text-[#5A5A5A] dark:text-[#94A3B8] hover:bg-[#2D2555]/5 dark:hover:bg-white/5"
-                }`}
-              >
-                {cat}
-              </button>
-            ))}
-          </div>
+          {categories.map((cat) => (
+            <button
+              key={cat}
+              onClick={() => setActiveCategory(cat)}
+              className={`shrink-0 px-4 lg:px-5 py-[5px] lg:py-2 rounded-full text-[12px] lg:text-[14px] font-normal lg:font-medium tracking-[0.01em] capitalize transition-colors ${
+                activeCategory === cat
+                  ? "bg-[#2D2555] text-white dark:bg-[#10B981]"
+                  : "bg-[#F3F4F6] lg:bg-white dark:bg-transparent lg:border lg:border-[#2D2555] dark:border-[#94A3B8]/30 text-[#4A5565] dark:text-[#94A3B8] hover:bg-[#E5E7EB] lg:hover:bg-[#2D2555]/5 dark:hover:bg-white/5"
+              }`}
+            >
+              {cat}
+            </button>
+          ))}
         </motion.div>
 
         {/* ── Search Bar ── */}
@@ -177,13 +175,13 @@ export default function BlogContent() {
 
         {/* ── Featured Article ── */}
         <motion.div
-          className="flex flex-col md:flex-row items-stretch gap-5 rounded-xl overflow-hidden"
+          className="flex flex-col lg:flex-row items-stretch gap-5 rounded-xl overflow-hidden"
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.45 }}
         >
           {/* Image */}
-          <div className="relative w-full md:w-[420px] shrink-0 h-[260px] md:h-auto rounded-xl overflow-hidden">
+          <div className="relative w-full lg:w-[420px] shrink-0 h-[318px] lg:h-auto rounded-[10px] lg:rounded-xl overflow-hidden">
             <Image
               src={featuredPost.image}
               alt={featuredPost.title}
@@ -193,43 +191,62 @@ export default function BlogContent() {
           </div>
 
           {/* Content */}
-          <div className="flex-1 flex flex-col items-start justify-center gap-8 p-6 md:p-10 bg-white dark:bg-[#1A1F2E] rounded-xl">
+          <div className="flex-1 flex flex-col items-start justify-center gap-4 lg:gap-8 p-4 lg:p-10 bg-white dark:bg-[#1A1F2E] border border-[#D0D0D0]/30 lg:border-0 rounded-[13px] lg:rounded-xl">
             <div className="flex flex-col gap-4">
               {/* Title */}
-              <h3 className="text-[18px] sm:text-[20px] md:text-[24px] font-medium leading-[150%] uppercase text-black dark:text-white">
+              <h3 className="text-[16px] lg:text-[24px] font-semibold lg:font-medium leading-[150%] tracking-[0.01em] uppercase text-[#2D2555] lg:text-black dark:text-white">
                 {featuredPost.title}
               </h3>
 
               {/* Tags */}
-              <div className="flex flex-wrap gap-4">
-                {featuredPost.tags.map((tag) => (
-                  <TagPill key={tag.label} label={tag.label} value={tag.value} />
+              <div className="flex flex-wrap gap-[9px] lg:gap-4">
+                {featuredPost.tags.slice(0, 1).map((tag) => (
+                  <div key={tag.label} className="flex items-center px-[13px] py-[7px] gap-[6px] bg-[#E7F3EE] lg:bg-[#068653]/10 dark:bg-[#068653]/20 rounded-full">
+                    <span className="text-[12px] font-normal leading-[150%] tracking-[0.01em] text-[#3D3837] dark:text-[#94A3B8]">{tag.label}</span>
+                    <span className="w-1 h-1 rounded-full bg-[#068653]" />
+                    <span className="text-[12px] font-medium leading-[150%] tracking-[0.01em] text-[#2D2555] dark:text-white">{tag.value}</span>
+                  </div>
+                ))}
+                {featuredPost.tags.slice(1, 2).map((tag) => (
+                  <div key={tag.label} className="flex items-center justify-center px-[14px] py-[7px] gap-[6px] bg-[#068653]/10 dark:bg-[#068653]/20 rounded-full">
+                    <span className="text-[13px] font-normal leading-[150%] text-[#5A5A5A] dark:text-[#94A3B8]">{tag.label}</span>
+                    <span className="w-1 h-1 rounded-full bg-[#2D2555]" />
+                    <span className="text-[13px] font-medium leading-[150%] text-[#5A5A5A] dark:text-white">{tag.value}</span>
+                  </div>
+                ))}
+                {featuredPost.tags.slice(2).map((tag) => (
+                  <div key={tag.label} className="flex items-center justify-center px-[14px] py-[7px] gap-[6px] border border-[#2D2555]/20 dark:border-white/20 rounded-full">
+                    <span className="text-[12px] font-normal leading-[150%] tracking-[0.01em] text-[#3D3837]/50 dark:text-[#94A3B8]/50">{tag.label}</span>
+                    <ArrowUpRight size={12} className="text-[#068653]" />
+                    <span className="text-[12px] font-medium leading-[150%] tracking-[0.01em] text-[#2D2555]/50 dark:text-white/50">{tag.value}</span>
+                  </div>
                 ))}
               </div>
             </div>
 
             {/* Description */}
-            <p className="text-[15px] leading-[150%] text-[#2E2E2E] dark:text-[#94A3B8]">
+            <p className="text-[12px] lg:text-[15px] leading-[160%] lg:leading-[150%] tracking-[0.01em] text-[#5A5A5A] lg:text-[#2E2E2E] dark:text-[#94A3B8]">
               {featuredPost.description}
             </p>
 
             {/* Footer */}
-            <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between w-full gap-4">
-              {/* Read More */}
-              <div className="flex items-center gap-2">
-                <div className="w-[50px] h-[50px] rounded-full bg-[#2D2555]/10 flex items-center justify-center">
-                  <ArrowUpRight size={22} className="text-[#2D2555] dark:text-white" />
-                </div>
-                <span className="text-[15px] font-medium uppercase text-[#2E2E2E] dark:text-white">
-                  Read Full Blog
+            <div className="flex flex-col gap-4 w-full">
+              {/* Date */}
+              <div className="flex items-center gap-[7px]">
+                <span className="text-[12px] lg:text-[15px] text-[#737373]">Published Date</span>
+                <span className="text-[14px] lg:text-[19px] font-medium uppercase text-[#737373]">
+                  {featuredPost.date}
                 </span>
               </div>
 
-              {/* Date */}
-              <div className="flex items-center gap-2.5">
-                <span className="text-[15px] text-[#737373]">Published Date</span>
-                <span className="text-[16px] sm:text-[19px] font-medium uppercase text-[#737373]">
-                  {featuredPost.date}
+              {/* Read More */}
+              <div className="flex items-center gap-[6px] lg:gap-2">
+                <div className="w-[26px] h-[26px] lg:w-[50px] lg:h-[50px] rounded-full bg-[#2D2555]/10 flex items-center justify-center">
+                  <ArrowUpRight size={11} className="text-[#2D2555] dark:text-white lg:hidden" />
+                  <ArrowUpRight size={22} className="text-[#2D2555] dark:text-white hidden lg:block" />
+                </div>
+                <span className="text-[14px] lg:text-[15px] font-medium uppercase text-[#2E2E2E] dark:text-white">
+                  Read Full Blog
                 </span>
               </div>
             </div>
@@ -248,15 +265,15 @@ export default function BlogContent() {
             {blogPosts.slice(rowIdx * 3, rowIdx * 3 + 3).map((post, i) => (
               <motion.div
                 key={i}
-                className="flex flex-col bg-white dark:bg-[#1A1F2E] border border-[#D0D0D0]/50 rounded-xl p-[15px] pb-7 gap-5"
+                className="flex flex-col gap-5 lg:gap-0"
                 initial={{ opacity: 0, y: 25 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-50px" }}
                 transition={{ duration: 0.5, delay: i * 0.1 }}
                 whileHover={{ y: -5 }}
               >
-                {/* Card Image */}
-                <div className="relative w-full h-[222px] rounded-xl overflow-hidden">
+                {/* Card Image — separate on mobile, inside card on desktop */}
+                <div className="relative w-full h-[209px] lg:h-[222px] rounded-[10px] lg:rounded-t-xl lg:rounded-b-none overflow-hidden">
                   <Image
                     src={post.image}
                     alt={post.title}
@@ -266,34 +283,57 @@ export default function BlogContent() {
                 </div>
 
                 {/* Card Content */}
-                <div className="flex flex-col gap-7 pr-4">
-                  <div className="flex flex-col gap-2.5">
+                <div className="flex flex-col gap-4 lg:gap-7 p-4 lg:p-[15px] lg:pb-7 bg-white dark:bg-[#1A1F2E] border border-[#D0D0D0]/30 lg:border-[#D0D0D0]/50 rounded-[13px] lg:rounded-t-none lg:rounded-b-xl">
+                  <div className="flex flex-col gap-4 lg:gap-2.5">
                     {/* Tags */}
-                    <div className="flex flex-nowrap gap-3 overflow-hidden">
-                      {post.tags.map((tag) => (
-                        <TagPill key={tag.label} label={tag.label} value={tag.value} />
+                    <div className="flex flex-wrap lg:flex-nowrap gap-[9px] lg:gap-3 overflow-hidden">
+                      {post.tags.slice(0, 1).map((tag) => (
+                        <div key={tag.label} className="flex items-center px-[13px] py-[7px] gap-[6px] bg-[#E7F3EE] lg:bg-[#068653]/10 dark:bg-[#068653]/20 rounded-full">
+                          <span className="text-[12px] font-normal leading-[150%] tracking-[0.01em] text-[#3D3837] dark:text-[#94A3B8]">{tag.label}</span>
+                          <span className="w-1 h-1 rounded-full bg-[#068653]" />
+                          <span className="text-[12px] font-medium leading-[150%] tracking-[0.01em] text-[#2D2555] dark:text-white">{tag.value}</span>
+                        </div>
+                      ))}
+                      {post.tags.slice(1).map((tag) => (
+                        <div key={tag.label} className="flex items-center justify-center px-[14px] py-[7px] gap-[6px] bg-[#068653]/10 dark:bg-[#068653]/20 rounded-full">
+                          <span className="text-[13px] font-normal leading-[150%] text-[#5A5A5A] dark:text-[#94A3B8]">{tag.label}</span>
+                          <span className="w-1 h-1 rounded-full bg-[#2D2555]" />
+                          <span className="text-[13px] font-medium leading-[150%] text-[#5A5A5A] dark:text-white">{tag.value}</span>
+                        </div>
                       ))}
                     </div>
 
                     {/* Title */}
-                    <h4 className="text-[18px] font-medium leading-[150%] uppercase text-[#0A0A0A] dark:text-white">
+                    <h4 className="text-[16px] lg:text-[18px] font-semibold lg:font-medium leading-[150%] tracking-[0.01em] uppercase text-[#2D2555] lg:text-[#0A0A0A] dark:text-white">
                       {post.title}
                     </h4>
 
                     {/* Description */}
-                    <p className="text-[14px] leading-[150%] text-[#737373] dark:text-[#94A3B8] line-clamp-2">
+                    <p className="text-[12px] lg:text-[14px] leading-[160%] lg:leading-[150%] tracking-[0.01em] text-[#5A5A5A] lg:text-[#737373] dark:text-[#94A3B8]">
                       {post.description}
                     </p>
                   </div>
 
-                  {/* Read More */}
-                  <div className="flex items-center gap-2">
-                    <div className="w-[50px] h-[50px] rounded-full bg-[#2D2555]/10 flex items-center justify-center">
-                      <ArrowUpRight size={22} className="text-[#2D2555] dark:text-white" />
+                  {/* Footer */}
+                  <div className="flex flex-col gap-4">
+                    {/* Date */}
+                    <div className="flex items-center gap-[7px]">
+                      <span className="text-[12px] text-[#737373]">Published Date</span>
+                      <span className="text-[14px] font-medium uppercase text-[#737373]">
+                        {featuredPost.date}
+                      </span>
                     </div>
-                    <span className="text-[13px] font-medium uppercase text-[#737373] font-mono">
-                      Read Full Blog
-                    </span>
+
+                    {/* Read More */}
+                    <div className="flex items-center gap-[6px] lg:gap-2">
+                      <div className="w-[26px] h-[26px] lg:w-[50px] lg:h-[50px] rounded-full bg-[#2D2555]/10 flex items-center justify-center">
+                        <ArrowUpRight size={11} className="text-[#2D2555] dark:text-white lg:hidden" />
+                        <ArrowUpRight size={22} className="text-[#2D2555] dark:text-white hidden lg:block" />
+                      </div>
+                      <span className="text-[14px] lg:text-[13px] font-medium uppercase text-[#2E2E2E] lg:text-[#737373]">
+                        Read Full Blog
+                      </span>
+                    </div>
                   </div>
                 </div>
               </motion.div>
