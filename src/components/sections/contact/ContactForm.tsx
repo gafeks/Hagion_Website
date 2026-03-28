@@ -67,7 +67,7 @@ export default function ContactForm() {
             transition={{ duration: 0.5 }}
           >
             <div className="bg-[#2D2555]/5 dark:bg-[#1A2035] rounded-xl p-6 lg:p-8">
-              <h2 className="text-[24px] font-semibold leading-[32px] tracking-[-0.6px] text-[#2D2555] dark:text-white">
+              <h2 className="text-[20px] lg:text-[24px] font-semibold leading-[32px] tracking-[-0.6px] text-[#2D2555] dark:text-white">
                 Send Us a Message
               </h2>
 
@@ -111,7 +111,7 @@ export default function ContactForm() {
                 </div>
 
                 <button type="submit"
-                  className="w-full lg:w-[192px] flex items-center justify-center gap-2 h-12 bg-[#2D2555] dark:bg-[#068653] text-white text-[14px] font-medium tracking-[0.4px] capitalize rounded-md hover:bg-[#231d45] dark:hover:bg-[#057a4a] transition-colors">
+                  className="w-[217px] lg:w-[192px] mx-auto lg:mx-0 flex items-center justify-center gap-2 h-12 bg-[#2D2555] dark:bg-[#068653] text-white text-[14px] font-medium tracking-[0.4px] capitalize rounded-md hover:bg-[#231d45] dark:hover:bg-[#057a4a] transition-colors">
                   <Send size={16} />
                   Send Message
                 </button>
@@ -138,7 +138,7 @@ export default function ContactForm() {
                   </h3>
                   <div className="flex flex-col">
                     {card.lines.map((line) => (
-                      <span key={line} className="text-[14px] leading-[20px] text-[#65758B] dark:text-[#94A3B8]">
+                      <span key={line} className="text-[12px] lg:text-[14px] leading-[20px] text-[#65758B] dark:text-[#94A3B8]">
                         {line}
                       </span>
                     ))}
