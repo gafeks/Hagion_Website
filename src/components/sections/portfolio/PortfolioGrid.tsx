@@ -99,10 +99,10 @@ export default function PortfolioGrid() {
       id="projects"
       className="w-full bg-white dark:bg-[#0B0F1A] py-10 overflow-hidden"
     >
-      <div className="max-w-[1231px] mx-auto px-6">
+      <div className="max-w-[1231px] mx-auto px-5 lg:px-6">
         {/* Small Filter Tabs */}
         <motion.div
-          className="flex flex-wrap justify-center items-center gap-2"
+          className="grid grid-cols-3 lg:flex lg:flex-wrap lg:justify-center items-center gap-[10px] lg:gap-2"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -114,7 +114,7 @@ export default function PortfolioGrid() {
               <motion.button
                 key={category}
                 onClick={() => setActiveFilter(category)}
-                className={`flex items-center justify-center px-4 py-2 rounded-full text-[14px] font-normal leading-[20px] transition-colors ${
+                className={`flex items-center justify-center px-4 py-[5px] lg:py-2 rounded-full text-[12px] lg:text-[14px] font-normal leading-[20px] tracking-[0.01em] transition-colors ${
                   isActive
                     ? "bg-[#2D2555] dark:bg-[#068653] text-white"
                     : "bg-[#F3F4F6] dark:bg-white/10 text-[#4A5565] dark:text-[#94A3B8] hover:bg-[#E5E7EB] dark:hover:bg-white/15"
@@ -130,26 +130,26 @@ export default function PortfolioGrid() {
 
         {/* Featured Projects Bar */}
         <motion.div
-          className="flex items-center justify-between py-10 mt-10"
+          className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-5 py-5 lg:py-10 mt-5 lg:mt-10"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.1 }}
         >
           {/* Heading */}
-          <h2 className="text-[38px] font-semibold leading-[46px] uppercase text-[#2D2555] dark:text-white flex-1">
+          <h2 className="text-[24px] lg:text-[38px] font-semibold leading-[29px] lg:leading-[46px] tracking-[0.01em] uppercase text-[#2D2555] dark:text-white lg:flex-1">
             Projects <span className="text-[#068653]">Showcase</span>
           </h2>
 
           {/* Tabs */}
-          <div className="flex items-start gap-[10px]">
+          <div className="flex flex-wrap items-start gap-[10px]">
             {projectTabs.map((tab) => {
               const isActive = activeTab === tab;
               return (
                 <motion.button
                   key={tab}
                   onClick={() => setActiveTab(tab)}
-                  className={`flex items-center justify-center px-5 py-[14px] rounded-[40px] text-[14px] font-medium leading-[150%] capitalize transition-colors ${
+                  className={`flex items-center justify-center px-5 py-[5px] lg:py-[14px] rounded-[40px] text-[12px] lg:text-[14px] font-medium leading-[150%] tracking-[0.01em] capitalize transition-colors ${
                     isActive
                       ? "bg-[#2D2555] dark:bg-[#068653] text-white"
                       : "border border-[#2D2555] dark:border-white/30 text-[#2D2555] dark:text-[#94A3B8] hover:bg-[#2D2555]/5 dark:hover:bg-white/5"
@@ -165,11 +165,11 @@ export default function PortfolioGrid() {
         </motion.div>
 
         {/* Project Showcase Cards */}
-        <div className="flex flex-col gap-6">
+        <div className="flex flex-col gap-6 lg:gap-6">
           {projects.map((project, index) => (
             <motion.div
               key={project.title}
-              className="flex items-center rounded-[19px] gap-4"
+              className="flex flex-col lg:flex-row lg:items-center rounded-[13px] lg:rounded-[19px] gap-4"
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -177,7 +177,7 @@ export default function PortfolioGrid() {
             >
               {/* Info Card */}
               <motion.div
-                className="flex-1 flex flex-col items-start p-6 gap-4 bg-white dark:bg-[#1A2035] border border-[#d0d0d0]/30 dark:border-white/10 rounded-[13px] h-[347px]"
+                className="flex-1 flex flex-col items-start p-4 lg:p-6 gap-4 bg-white dark:bg-[#1A2035] border border-[#d0d0d0]/30 dark:border-white/10 rounded-[13px] lg:h-[347px]"
                 whileHover={{
                   y: -4,
                   boxShadow: isDark
@@ -186,18 +186,18 @@ export default function PortfolioGrid() {
                 }}
               >
                 {/* Title */}
-                <h3 className="text-[20px] font-semibold leading-[150%] capitalize text-[#2D2555] dark:text-white">
+                <h3 className="text-[16px] lg:text-[20px] font-semibold leading-[150%] tracking-[0.01em] capitalize text-[#2D2555] dark:text-white">
                   {project.title}
                 </h3>
 
                 {/* Tags */}
-                <div className="flex flex-col items-start gap-[9px]">
+                <div className="flex flex-wrap items-start gap-[9px]">
                   <div className="flex items-center px-[13px] py-[7px] gap-[6px] bg-[#2D2555]/10 dark:bg-white/10 rounded-full">
-                    <span className="text-[14px] font-normal leading-[150%] text-[#3D3837] dark:text-[#94A3B8]">
+                    <span className="text-[12px] lg:text-[14px] font-normal leading-[150%] text-[#3D3837] dark:text-[#94A3B8]">
                       {project.category}
                     </span>
                     <span className="w-1 h-1 rounded-full bg-[#068653]" />
-                    <span className="text-[14px] font-medium leading-[150%] text-[#2D2555] dark:text-white">
+                    <span className="text-[12px] lg:text-[14px] font-medium leading-[150%] text-[#2D2555] dark:text-white">
                       {project.subcategory}
                     </span>
                   </div>
@@ -213,14 +213,14 @@ export default function PortfolioGrid() {
                 </div>
 
                 {/* Description */}
-                <p className="text-[14px] font-normal leading-[160%] text-[#5A5A5A] dark:text-[#94A3B8]">
+                <p className="text-[12px] lg:text-[14px] font-normal leading-[160%] tracking-[0.01em] text-[#5A5A5A] dark:text-[#94A3B8]">
                   {project.description}
                 </p>
               </motion.div>
 
               {/* Image */}
               <div
-                className="flex-1 h-[347px] rounded-[13px]"
+                className="w-full lg:flex-1 h-[283px] lg:h-[347px] rounded-[13px]"
                 style={{
                   background: `url('${project.image}')`,
                   backgroundSize: "cover",
@@ -229,10 +229,10 @@ export default function PortfolioGrid() {
               />
 
               {/* Features + Impact + CTA */}
-              <div className="flex-1 flex flex-col items-center gap-[9px]">
+              <div className="w-full lg:flex-1 flex flex-col items-center gap-[9px]">
                 {/* Key Features & Impact — single card */}
                 <motion.div
-                  className="w-full flex flex-col items-start p-7 gap-[15px] bg-white dark:bg-[#1A2035] border border-[#d0d0d0]/30 dark:border-white/10 rounded-[9px]"
+                  className="w-full flex flex-col items-start p-4 lg:p-7 gap-[15px] bg-white dark:bg-[#1A2035] border border-[#d0d0d0]/30 dark:border-white/10 rounded-[9px]"
                   whileHover={{
                     y: -3,
                     boxShadow: isDark
@@ -242,7 +242,7 @@ export default function PortfolioGrid() {
                 >
                   {/* Key Features */}
                   <div className="flex flex-col gap-[11px] w-full">
-                    <span className="text-[11px] font-normal leading-[15px] tracking-[0.56px] uppercase text-[#5A5A5A] dark:text-[#94A3B8]">
+                    <span className="text-[10px] lg:text-[11px] font-normal leading-[15px] tracking-[1.56px] lg:tracking-[0.56px] uppercase text-[#5A5A5A] dark:text-[#94A3B8]">
                       Key Features
                     </span>
                     <div className="flex flex-col gap-[6px]">
@@ -255,7 +255,7 @@ export default function PortfolioGrid() {
                             size={13}
                             className="text-[#2D2555] dark:text-[#068653] shrink-0"
                           />
-                          <span className="text-[13px] font-normal leading-[19px] text-[#4A5565] dark:text-[#94A3B8]">
+                          <span className="text-[12px] lg:text-[13px] font-normal leading-[19px] tracking-[0.01em] text-[#4A5565] dark:text-[#94A3B8]">
                             {feature}
                           </span>
                         </div>
@@ -265,7 +265,7 @@ export default function PortfolioGrid() {
 
                   {/* Impact */}
                   <div className="flex flex-col gap-[11px] w-full pt-2">
-                    <span className="text-[11px] font-normal leading-[15px] tracking-[0.56px] uppercase text-[#5A5A5A] dark:text-[#94A3B8]">
+                    <span className="text-[10px] lg:text-[11px] font-normal leading-[15px] tracking-[1.56px] lg:tracking-[0.56px] uppercase text-[#5A5A5A] dark:text-[#94A3B8]">
                       Impact
                     </span>
                     <div className="flex flex-col gap-[6px]">
@@ -275,7 +275,7 @@ export default function PortfolioGrid() {
                             size={13}
                             className="text-[#2D2555] dark:text-[#068653] shrink-0"
                           />
-                          <span className="text-[13px] font-normal leading-[19px] text-[#4A5565] dark:text-[#94A3B8]">
+                          <span className="text-[12px] lg:text-[13px] font-normal leading-[19px] tracking-[0.01em] text-[#4A5565] dark:text-[#94A3B8]">
                             {item}
                           </span>
                         </div>
@@ -292,7 +292,7 @@ export default function PortfolioGrid() {
                 >
                   <Link
                     href="#"
-                    className="flex items-center justify-center w-full py-[13px] bg-[#2D2555] dark:bg-[#068653] rounded-[7px] text-[13px] font-medium leading-[150%] uppercase text-white hover:bg-[#231d45] dark:hover:bg-[#057a4a] transition-colors"
+                    className="flex items-center justify-center w-full py-[13px] bg-[#2D2555] dark:bg-[#068653] rounded-[7px] text-[13px] font-medium leading-[150%] tracking-[0.01em] uppercase text-white hover:bg-[#231d45] dark:hover:bg-[#057a4a] transition-colors"
                   >
                     Start a Project
                   </Link>

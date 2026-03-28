@@ -213,56 +213,59 @@ function ServiceCard({
       viewport={{ once: true }}
       transition={{ duration: 0.5, delay: (index % 2) * 0.15 }}
       whileHover={{ y: -4, transition: { duration: 0.2 } }}
-      className="group flex-1 h-full rounded-[14px] border border-black/10 dark:border-white/10 hover:border-[#068653]/50 bg-transparent dark:bg-[#1A2035] hover:bg-[#068653]/5 p-[32px_32px_24px] transition-colors duration-300 cursor-pointer"
+      className={`group flex-1 h-full rounded-[10px] lg:rounded-[14px] border hover:border-[#068653]/50 bg-transparent dark:bg-[#1A2035] hover:bg-[#068653]/5 p-5 lg:p-[32px_32px_24px] transition-colors duration-300 cursor-pointer ${index === 0 ? "border-[#068653]/50 bg-[#068653]/5" : "border-black/10 dark:border-white/10"} lg:min-w-0`}
     >
       {/* Top row: icon + number/title */}
-      <div className="flex items-start gap-4">
-        <div className="flex-shrink-0 w-[56px] h-[56px] flex items-center justify-center rounded-[14px] bg-[#2D2555]/5 dark:bg-white/10 group-hover:bg-white dark:group-hover:bg-white/20 transition-colors duration-300">
-          <Icon size={28} className="text-[#2D2555] dark:text-[#068653] group-hover:text-[#068653] transition-colors duration-300" />
+      <div className="flex items-start gap-3 lg:gap-4">
+        <div className={`flex-shrink-0 w-[38px] h-[38px] lg:w-[56px] lg:h-[56px] flex items-center justify-center rounded-[10px] lg:rounded-[14px] ${index === 0 ? "bg-white dark:bg-white/20" : "bg-[#2D2555]/5 dark:bg-white/10"} group-hover:bg-white dark:group-hover:bg-white/20 transition-colors duration-300`}>
+          <Icon size={19} className="text-[#2D2555] dark:text-[#068653] group-hover:text-[#068653] transition-colors duration-300 lg:hidden" />
+          <Icon size={28} className="text-[#2D2555] dark:text-[#068653] group-hover:text-[#068653] transition-colors duration-300 hidden lg:block" />
         </div>
         <div className="flex flex-col gap-0.5">
-          <span className="text-xs leading-4 text-[#2D2555] dark:text-[#94A3B8]">
+          <span className="text-[8px] lg:text-xs leading-[11px] lg:leading-4 text-[#2D2555] dark:text-[#94A3B8]">
             {number}
           </span>
-          <h3 className="text-xl leading-7 font-normal group-hover:font-medium text-[#101828] dark:text-white group-hover:text-[#068653] transition-colors duration-300">
+          <h3 className={`text-[14px] lg:text-xl leading-[19px] lg:leading-7 font-normal group-hover:font-medium ${index === 0 ? "text-[#068653]" : "text-[#101828] dark:text-white"} group-hover:text-[#068653] transition-colors duration-300`}>
             {service.title}
           </h3>
         </div>
       </div>
 
       {/* Description */}
-      <p className="mt-4 text-sm leading-5 text-[#4A5565] dark:text-[#94A3B8]">
+      <p className="mt-3 lg:mt-4 text-[10px] lg:text-sm leading-[14px] lg:leading-5 text-[#4A5565] dark:text-[#94A3B8]">
         {service.description}
       </p>
 
       {/* What We Deliver */}
-      <div className="mt-4">
-        <span className="text-xs uppercase font-normal group-hover:font-medium text-[#5A5A5A] dark:text-[#94A3B8] transition-all duration-300" style={{ letterSpacing: "0.6px" }}>
+      <div className="mt-3 lg:mt-4">
+        <span className="text-[8px] lg:text-xs uppercase font-normal group-hover:font-medium text-[#5A5A5A] dark:text-[#94A3B8] transition-all duration-300" style={{ letterSpacing: "1.1px" }}>
           What We Deliver
         </span>
 
-        <div className="mt-3 flex gap-0">
+        <div className="mt-2 lg:mt-3 flex gap-0">
           {/* Left column */}
-          <div className="flex-1 flex flex-col gap-1.5">
+          <div className="flex-1 flex flex-col gap-1">
             {service.leftDeliverables.map((item, i) => (
-              <div key={`l-${i}`} className="flex items-center gap-2">
-                <div className="flex-shrink-0 w-[14px] h-[14px] rounded-full border border-[#2D2555] dark:border-[#94A3B8] group-hover:border-[#068653] flex items-center justify-center transition-colors duration-300">
-                  <Checkmark size={8} className="text-[#2D2555] dark:text-[#94A3B8] group-hover:text-[#068653] transition-colors duration-300" />
+              <div key={`l-${i}`} className="flex items-center gap-1.5 lg:gap-2">
+                <div className={`flex-shrink-0 w-[10px] h-[10px] lg:w-[14px] lg:h-[14px] rounded-full border ${index === 0 ? "border-[#068653]" : "border-[#2D2555] dark:border-[#94A3B8]"} group-hover:border-[#068653] flex items-center justify-center transition-colors duration-300`}>
+                  <Checkmark size={6} className={`${index === 0 ? "text-[#068653]" : "text-[#2D2555] dark:text-[#94A3B8]"} group-hover:text-[#068653] transition-colors duration-300 lg:hidden`} />
+                  <Checkmark size={8} className={`${index === 0 ? "text-[#068653]" : "text-[#2D2555] dark:text-[#94A3B8]"} group-hover:text-[#068653] transition-colors duration-300 hidden lg:block`} />
                 </div>
-                <span className="text-[14px] leading-5 text-[#4A5565] dark:text-[#94A3B8]">
+                <span className="text-[10px] lg:text-[14px] leading-[14px] lg:leading-5 text-[#4A5565] dark:text-[#94A3B8]">
                   {item}
                 </span>
               </div>
             ))}
           </div>
           {/* Right column */}
-          <div className="flex-1 flex flex-col gap-1.5">
+          <div className="flex-1 flex flex-col gap-1">
             {service.rightDeliverables.map((item, i) => (
-              <div key={`r-${i}`} className="flex items-center gap-2">
-                <div className="flex-shrink-0 w-[14px] h-[14px] rounded-full border border-[#2D2555] dark:border-[#94A3B8] group-hover:border-[#068653] flex items-center justify-center transition-colors duration-300">
-                  <Checkmark size={8} className="text-[#2D2555] dark:text-[#94A3B8] group-hover:text-[#068653] transition-colors duration-300" />
+              <div key={`r-${i}`} className="flex items-center gap-1.5 lg:gap-2">
+                <div className={`flex-shrink-0 w-[10px] h-[10px] lg:w-[14px] lg:h-[14px] rounded-full border ${index === 0 ? "border-[#068653]" : "border-[#2D2555] dark:border-[#94A3B8]"} group-hover:border-[#068653] flex items-center justify-center transition-colors duration-300`}>
+                  <Checkmark size={6} className={`${index === 0 ? "text-[#068653]" : "text-[#2D2555] dark:text-[#94A3B8]"} group-hover:text-[#068653] transition-colors duration-300 lg:hidden`} />
+                  <Checkmark size={8} className={`${index === 0 ? "text-[#068653]" : "text-[#2D2555] dark:text-[#94A3B8]"} group-hover:text-[#068653] transition-colors duration-300 hidden lg:block`} />
                 </div>
-                <span className="text-[14px] leading-5 text-[#4A5565] dark:text-[#94A3B8]">
+                <span className="text-[10px] lg:text-[14px] leading-[14px] lg:leading-5 text-[#4A5565] dark:text-[#94A3B8]">
                   {item}
                 </span>
               </div>
@@ -284,16 +287,30 @@ export default function ServicesGrid() {
   }
 
   return (
-    <section className="py-20 dark:bg-[#0B0F1A]">
-      <div className="max-w-[1231px] mx-auto px-6">
-        <h2
-          className="text-[38px] font-semibold uppercase mb-12 dark:text-white"
+    <section className="py-10 lg:py-20 dark:bg-[#0B0F1A]">
+      <div className="max-w-[1231px] mx-auto px-5 lg:px-6">
+        <motion.h2
+          className="text-[24px] lg:text-[38px] font-semibold uppercase mb-4 lg:mb-12 dark:text-white"
           style={{ color: isDark ? undefined : "#2D2555" }}
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
         >
           OUR SERVICES
-        </h2>
+        </motion.h2>
 
-        <div className="flex flex-col gap-[30px]">
+        {/* Mobile: horizontal scroll */}
+        <div className="flex lg:hidden gap-4 overflow-x-auto overflow-y-hidden -mx-5 px-5 scrollbar-hide">
+          {services.map((service, index) => (
+            <div key={index} className="h-[300px] shrink-0 w-[300px] flex">
+              <ServiceCard service={service} index={index} />
+            </div>
+          ))}
+        </div>
+
+        {/* Desktop: 2-column grid */}
+        <div className="hidden lg:flex flex-col gap-[30px]">
           {rows.map((row, rowIndex) => (
             <div
               key={rowIndex}
