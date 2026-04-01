@@ -11,6 +11,12 @@ import {
 
 const team = [
   {
+    name: "Prof. Chinedu Prince Mmom",
+    role: "Board Member",
+    bio: "Prof. Chinedu Prince Mmom serves as a Board Member at Hagion International Ltd, bringing extensive academic and industry expertise to guide the company's strategic direction and governance.",
+    image: "/images/team-chinedu-mmom.jpeg",
+  },
+  {
     name: "Afekemor Gift",
     role: "Founder & MD/CEO",
     bio: "Afekemor Gift is a technology entrepreneur, software developer, and digital transformation strategist with over a decade of experience in building scalable digital platforms and enterprise systems. ",

@@ -83,7 +83,7 @@ export default function HowWeWork() {
             {/* Main image */}
             <div className="relative w-full h-full rounded-[6px_52px_6px_6px] lg:rounded-[10px_90px_10px_10px] overflow-hidden z-10">
               <Image
-                src="/images/how-we-work.png"
+                src="/images/how-we-work.jpeg"
                 alt="How we work"
                 fill
                 className="object-cover"

@@ -126,7 +126,7 @@ export default function WhyHagion() {
             transition={{ duration: 0.6, delay: 0.3 }}
           >
             <Image
-              src="/images/why-hagion-image.png"
+              src="/images/why-hagion.jpeg"
               alt="Team collaboration"
               width={575}
               height={520}

@@ -41,7 +41,7 @@ export default function MissionVision() {
             <div className="pt-[40px] lg:pt-[53px]" style={{ transform: "scaleX(-1)" }}>
               <div className="w-[290px] lg:w-[391px] aspect-square rounded-t-[33px] lg:rounded-t-[44px] overflow-hidden">
                 <Image
-                  src="/images/hagion-mission.png"
+                  src="/images/innovation.jpeg"
                   alt="Our mission"
                   width={391}
                   height={391}
@@ -91,7 +91,7 @@ export default function MissionVision() {
             <div className="pt-[39px] lg:pt-[52px]">
               <div className="w-[301px] lg:w-[404px] h-[285px] lg:h-[382px] rounded-t-[32px] lg:rounded-t-[43px] overflow-hidden">
                 <Image
-                  src="/images/hagion-vision.png"
+                  src="/images/ceo.jpeg"
                   alt="Our vision"
                   width={404}
                   height={382}

@@ -40,8 +40,8 @@ const contactInfo = [
 const socials = [
   { Icon: LogoFacebook, href: "#", label: "Facebook" },
   { Icon: LogoLinkedin, href: "#", label: "LinkedIn" },
-  { Icon: LogoInstagram, href: "#", label: "Instagram" },
-  { Icon: LogoX, href: "#", label: "X" },
+  { Icon: LogoInstagram, href: "https://www.instagram.com/hagioninternationalltd/", label: "Instagram" },
+  { Icon: LogoX, href: "https://x.com/HagionL62712", label: "X" },
 ];
 
 export default function Footer() {

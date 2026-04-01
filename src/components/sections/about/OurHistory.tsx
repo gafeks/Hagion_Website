@@ -68,7 +68,7 @@ export default function OurHistory() {
             transition={{ duration: 0.6, delay: 0.2 }}
           >
             <Image
-              src="/images/team-collaboration.png"
+              src="/images/our-history.jpeg"
               alt="Team collaboration"
               width={567}
               height={384}
