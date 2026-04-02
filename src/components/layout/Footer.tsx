@@ -145,12 +145,23 @@ export default function Footer() {
 
           {/* Bottom bar */}
           <div className="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-1 lg:gap-4 pt-4 lg:pt-6 border-t border-white/10">
-            <p className="text-[12px] leading-[16px] text-[#64748B]">
-              &copy; 2026 Hagion International Ltd. All rights reserved.
-            </p>
+            <div className="flex flex-col lg:flex-row items-start lg:items-center gap-2 lg:gap-3">
+              <p className="text-[12px] leading-[16px] text-[#64748B]">
+                &copy; 2026 Hagion International Ltd. All rights reserved.
+              </p>
+              <div className="flex items-center gap-3">
+                <Link href="/privacy" className="text-[12px] leading-[16px] text-[#64748B] hover:text-white transition-colors">
+                  Privacy Policy
+                </Link>
+                <span className="text-[#64748B]">|</span>
+                <Link href="/terms" className="text-[12px] leading-[16px] text-[#64748B] hover:text-white transition-colors">
+                  Terms &amp; Conditions
+                </Link>
+              </div>
+            </div>
             <Link
               href="/request-quote"
-              className="flex items-center gap-1 text-[12px] font-semibold leading-[16px] text-[#068653] hover:text-[#0a9e63] transition-colors"
+              className="flex items-center gap-1 text-[12px] font-semibold leading-[16px] text-[#068653] hover:text-[#0a9e63] transition-colors lg:mt-0 mt-2"
             >
               Start a project
               <ArrowUpRight size={13} className="text-[#068653]" />
