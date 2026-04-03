@@ -4,8 +4,8 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 
 const clients = [
-  { src: "/images/wastewise-logo.png", alt: "WasteWise", width: 84, height: 83 },
-  { src: "/images/partner-naanovo.jpeg", alt: "Naanovo", width: 163, height: 84 },
+  { src: "/images/certificate1.jpeg", alt: "Certification 1", width: 400, height: 180 },
+  { src: "/images/certificate2.jpeg", alt: "Certification 2", width: 400, height: 180 },
 ];
 
 export default function FeaturedClients() {
@@ -25,24 +25,29 @@ export default function FeaturedClients() {
           </h2>
 
           {/* Client Cards */}
-          <div className="flex flex-col gap-4 sm:flex-row sm:gap-6 lg:gap-10 w-full">
+          <div className="flex flex-col items-center sm:flex-row sm:justify-center gap-6 lg:gap-10 w-full max-w-[900px]">
             {clients.map((client, i) => (
               <motion.div
                 key={client.alt}
-                className="flex-1 flex items-center justify-center p-8 lg:p-[30px] h-[120px] lg:h-[143px] bg-white rounded-2xl"
+                className="w-full sm:w-[320px] lg:w-[420px] flex items-center justify-center p-3 lg:p-4 h-[160px] lg:h-[220px] bg-white rounded-2xl border border-[#F1F5F9] shadow-[0_8px_30px_rgb(0,0,0,0.04)]"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.4, delay: 0.1 * i }}
-                whileHover={{ y: -4 }}
+                whileHover={{ 
+                  y: -10, 
+                  boxShadow: "0px 20px 40px rgba(6, 134, 83, 0.12)",
+                  borderColor: "#068653"
+                }}
               >
-                <Image
-                  src={client.src}
-                  alt={client.alt}
-                  width={client.width}
-                  height={client.height}
-                  className="object-contain"
-                />
+                <div className="relative w-full h-full">
+                  <Image
+                    src={client.src}
+                    alt={client.alt}
+                    fill
+                    className="object-contain"
+                  />
+                </div>
               </motion.div>
             ))}
           </div>

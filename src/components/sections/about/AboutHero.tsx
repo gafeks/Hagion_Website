@@ -17,7 +17,7 @@ export default function AboutHero() {
             transition={{ duration: 0.7 }}
           >
             <Image
-              src="/images/about-hero.png"
+              src="/images/hagion-hero-about-image.png"
               alt="About Hagion"
               fill
               className="object-contain object-center"
@@ -68,7 +68,7 @@ export default function AboutHero() {
           transition={{ duration: 0.7 }}
         >
           <Image
-            src="/images/about-hero-mobile.png"
+            src="/images/mobile-about-hero.png"
             alt="About Hagion"
             fill
             className="object-contain"

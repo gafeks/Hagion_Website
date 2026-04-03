@@ -15,6 +15,7 @@ const team = [
     role: "Board Member",
     bio: "Prof. Chinedu Prince Mmom serves as a Board Member at Hagion International Ltd, bringing extensive academic and industry expertise to guide the company's strategic direction and governance.",
     image: "/images/team-chinedu-mmom.jpeg",
+    position: "object-top",
   },
   {
     name: "Afekemor Gift",
@@ -33,6 +34,7 @@ const team = [
     role: "Human Resource Manager (HRM)",
     bio: "Oshor Blessing serves as the Human Resource Manager at Hagion International Ltd, overseeing talent acquisition, staff development, performance management, and workplace culture.",
     image: "/images/team-blessing.jpeg",
+    position: "object-top",
   },
   {
     name: "Edum Kiikpoye",
@@ -45,12 +47,19 @@ const team = [
     role: "Senior Front-End Developer",
     bio: "Nnaemeka Chimezie serves as a Senior Front-End Developer at Hagion International Ltd, leading the design and development of responsive, user-facing interfaces across the company's enterprise platforms and client products using React, Next.js, and modern web technologies.",
     image: "/images/team-nnaemeka.jpeg",
+    position: "object-top",
   },
   {
     name: "Nwaerema Jacob",
     role: "Back End Developer",
     bio: "Nwaerema Cyprian Jacob serves as a Back End Developer at Hagion International Ltd, responsible for building and maintaining server-side applications, APIs, and database systems.",
     image: "/images/team-jacob.jpeg",
+  },
+  {
+    name: "Ikechi, Ijeoma Trust",
+    role: "Administrative Assistant",
+    bio: "Ikechi, Ijeoma Trust serves as the Administrative Assistant at Hagion International Ltd, where she leverages her skills as an astute graphic designer and organizational professional to support administrative workflows and creative projects.",
+    image: "/images/team-trust.jpeg",
   },
 ];
 
@@ -103,7 +112,7 @@ export default function Team() {
                     src={member.image}
                     alt={member.name}
                     fill
-                    className="object-cover object-top"
+                    className={`object-cover ${member.position || "object-center"}`}
                   />
                 </div>
               </div>
@@ -153,7 +162,7 @@ export default function Team() {
                       src={member.image}
                       alt={member.name}
                       fill
-                      className="object-cover object-top"
+                      className={`object-cover ${member.position || "object-center"}`}
                     />
                   </div>
                 </div>
