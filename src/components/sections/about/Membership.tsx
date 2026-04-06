@@ -47,71 +47,62 @@ export default function Membership() {
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
-            {/* Desktop staggered layout */}
-            <div className="hidden lg:flex flex-col gap-5">
-              <div className="flex gap-5 shrink-0">
+            {/* Desktop layout — 764px × 345px grid */}
+            <div className="hidden lg:flex flex-col gap-[25px] w-[764px] h-[345px]">
+              {/* Row 1: NITDA + NCS */}
+              <div className="flex gap-[44px]">
                 <motion.div
-                  className="flex items-center justify-start px-6 w-[320px] shrink-0 h-[140px] bg-white border border-[#DFDFE4] rounded shadow-[5px_0px_100px_rgba(247,247,247,0.5)]"
+                  className="flex flex-col items-center justify-center px-6 py-[7px] w-[345px] h-[160px] rounded-[4px]"
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.4, delay: 0.1 }}
                   whileHover={{ y: -4 }}
                 >
-                  <Image src="/images/nitda.png" alt="NITDA" width={220} height={100} className="object-contain" />
+                  <Image src="/images/nitda-transparent.png" alt="NITDA" width={232} height={118} className="object-contain" />
                 </motion.div>
                 <motion.div
-                  className="flex items-center justify-start px-6 w-[320px] shrink-0 h-[140px] bg-white border border-[#DFDFE4] rounded shadow-[5px_0px_100px_rgba(247,247,247,0.5)]"
+                  className="flex flex-col items-start justify-center px-6 py-[7px] w-[375px] h-[160px] rounded-[4px]"
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.4, delay: 0.2 }}
                   whileHover={{ y: -4 }}
                 >
-                  <Image src="/images/ncs-logo.png" alt="NCS" width={220} height={100} className="object-contain rounded-lg" />
+                  <Image src="/images/ncs-logo.png" alt="NCS" width={200} height={83} className="object-contain rounded-lg" />
                 </motion.div>
               </div>
-              <div className="flex gap-5 shrink-0 ml-[66px]">
+              {/* Row 2: CPN */}
+              <div className="flex justify-center">
                 <motion.div
-                  className="flex items-center justify-start px-6 w-[295px] shrink-0 h-[140px] bg-white border border-[#DFDFE4] rounded shadow-[5px_0px_100px_rgba(247,247,247,0.5)]"
+                  className="flex flex-col items-center justify-center px-6 py-[7px] w-[345px] h-[160px] rounded-[4px]"
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.4, delay: 0.3 }}
                   whileHover={{ y: -4 }}
                 >
-                  <Image src="/images/cpn-logo.png" alt="CPN" width={128} height={128} className="object-contain" />
-                </motion.div>
-                <motion.div
-                  className="flex items-center justify-start px-6 w-[320px] shrink-0 h-[140px] bg-white border border-[#DFDFE4] rounded shadow-[5px_0px_100px_rgba(247,247,247,0.5)]"
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.4, delay: 0.4 }}
-                  whileHover={{ y: -4 }}
-                >
-                  <Image src="/images/wastewise-logo.png" alt="WasteWise" width={126} height={125} className="object-contain" />
+                  <Image src="/images/cpn-logo.png" alt="CPN" width={128} height={129} className="object-contain" />
                 </motion.div>
               </div>
             </div>
 
-            {/* Mobile 2x2 grid */}
-            <div className="lg:hidden grid grid-cols-2 gap-3">
+            {/* Mobile grid */}
+            <div className="lg:hidden flex flex-col gap-3">
               {[
-                { src: "/images/nitda.png", alt: "NITDA", w: 140, h: 70 },
-                { src: "/images/ncs-logo.png", alt: "NCS", w: 140, h: 70 },
-                { src: "/images/cpn-logo.png", alt: "CPN", w: 80, h: 80 },
-                { src: "/images/wastewise-logo.png", alt: "WasteWise", w: 80, h: 80 },
+                { src: "/images/cpn-logo.png", alt: "CPN", w: 128, h: 129 },
+                { src: "/images/nitda-transparent.png", alt: "NITDA", w: 232, h: 118 },
+                { src: "/images/ncs-logo.png", alt: "NCS", w: 200, h: 83, rounded: true },
               ].map((item, i) => (
                 <motion.div
                   key={item.alt}
-                  className="flex items-center justify-center px-4 h-[100px] bg-white border border-[#DFDFE4] rounded shadow-[5px_0px_100px_rgba(247,247,247,0.5)]"
+                  className="flex items-center justify-center px-6 py-[7px] h-[120px] rounded-[4px]"
                   initial={{ opacity: 0, y: 15 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.3, delay: 0.1 * i }}
                 >
-                  <Image src={item.src} alt={item.alt} width={item.w} height={item.h} className="object-contain" />
+                  <Image src={item.src} alt={item.alt} width={item.w} height={item.h} className={`object-contain ${item.rounded ? "rounded-lg" : ""}`} />
                 </motion.div>
               ))}
             </div>
