@@ -297,7 +297,7 @@ export default function ServicesGrid() {
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
         >
-          OUR SERVICES
+          OUR <span className="text-[#068653]">SERVICES</span>
         </motion.h2>
 
         {/* Mobile: horizontal scroll */}

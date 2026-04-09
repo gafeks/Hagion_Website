@@ -1,6 +1,5 @@
 "use client";
 
-import Link from "next/link";
 import { motion } from "framer-motion";
 import { ArrowRight, ArrowUpRight } from "@carbon/icons-react";
 
@@ -41,12 +40,9 @@ export default function ServicesHero() {
                   View Blog
                 </span>
               </div>
-              <Link
-                href="/request-quote"
-                className="flex items-center justify-center px-[14px] py-[10px] bg-white/20 backdrop-blur-[10px] rounded-[10px] text-[14px] font-normal leading-[150%] capitalize text-white hover:bg-white/30 transition-colors shrink-0"
-              >
-                Web Development
-              </Link>
+              <span className="flex items-center justify-center px-[14px] py-[10px] bg-white/20 backdrop-blur-[10px] rounded-[10px] text-[14px] font-normal leading-[150%] capitalize text-white shrink-0">
+                App Development
+              </span>
             </div>
           </motion.div>
 
@@ -76,21 +72,26 @@ export default function ServicesHero() {
             </p>
 
             {/* CTA */}
-            <div className="flex items-center gap-[10px] lg:gap-7">
+            <motion.a
+              href="/request-quote"
+              className="flex items-center gap-[10px] lg:gap-7 cursor-pointer group"
+              whileHover={{ x: 4 }}
+              whileTap={{ scale: 0.97 }}
+            >
               <div className="relative w-[32px] h-[32px] lg:w-[50px] lg:h-[50px]">
-                <div className="absolute inset-0 rounded-full border-[1.5px] border-[#2D2555]" />
+                <div className="absolute inset-0 rounded-full border-[1.5px] border-[#2D2555] group-hover:border-[#068653] transition-colors" />
                 <div
-                  className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[20px] h-[20px] lg:w-9 lg:h-9 rounded-full flex items-center justify-center"
+                  className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[20px] h-[20px] lg:w-9 lg:h-9 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform"
                   style={{ background: "linear-gradient(108.72deg, #2D2555 25.38%, #6351BB 115.56%)" }}
                 >
                   <ArrowRight size={10} className="text-white lg:hidden" />
                   <ArrowRight size={18} className="text-white hidden lg:block" />
                 </div>
               </div>
-              <span className="text-[16px] lg:text-[21px] font-medium leading-[150%] tracking-[0.01em] capitalize text-[#2D2555] dark:text-white">
+              <span className="text-[16px] lg:text-[21px] font-medium leading-[150%] tracking-[0.01em] capitalize text-[#2D2555] dark:text-white group-hover:text-[#068653] transition-colors">
                 Start a Project
               </span>
-            </div>
+            </motion.a>
 
             {/* Bottom Bar — absolute on desktop, static on mobile */}
             <div

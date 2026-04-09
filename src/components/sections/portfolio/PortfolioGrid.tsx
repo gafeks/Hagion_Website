@@ -14,7 +14,7 @@ const projects = [
     duration: "2020",
     description:
       "A comprehensive digital learning platform developed during the COVID-19 pandemic to ensure academic continuity. Enabled 100% remote learning during lockdowns and digitized legacy school operations.",
-    image: "/images/wastewise.png",
+    image: "/images/portfolio-runo.jpg",
     features: [
       "Online classrooms",
       "Assignment submission system",
@@ -36,7 +36,7 @@ const projects = [
     duration: "2023",
     description:
       "Hagion served as an official training provider for the 3 Million Technical Talent initiative with ID Number TP/23/70673683. Trained 100+ participants with ALC coordination and Hackathon management.",
-    image: "/images/picadailys.png",
+    image: "/images/portfolio-3mtt.jpg",
     features: [
       "Training for 100+ participants",
       "ALC coordination",
@@ -58,7 +58,7 @@ const projects = [
     duration: "2017",
     description:
       "An all-in-one business management platform comparable to Bitrix24. Centralized company operations and significantly improved team productivity.",
-    image: "/images/vendor-service.png",
+    image: "/images/portfolio-autospheres.jpg",
     features: [
       "Integrated CRM",
       "Project Management tools",
@@ -80,7 +80,7 @@ const projects = [
     duration: "2023",
     description:
       "A multi-functional ecosystem combining brand rewards and financial services. Enhanced brand-user interaction through a digitized rewards economy.",
-    image: "/images/picadailys.png",
+    image: "/images/portfolio-picadailys.jpg",
     features: [
       "Android App (v1.1)",
       "Admin Dashboard",
@@ -102,7 +102,7 @@ const projects = [
     duration: "2025",
     description:
       "A web-based system designed to automate the lifecycle of micro-lending. Improved financial transparency and reduced manual processing errors.",
-    image: "/images/vendor-service.png",
+    image: "/images/portfolio-softgap.jpg",
     features: [
       "Loan tracking system",
       "Automated repayment schedules",
@@ -124,7 +124,7 @@ const projects = [
     duration: "2020",
     description:
       "Digital infrastructure for an industrial water drilling firm serving the Oil & Gas sector. Strengthened digital security and enabled scalable communication for field operations.",
-    image: "/images/wastewise.png",
+    image: "/images/portfolio-genphet.jpg",
     features: [
       "Corporate cloud hosting",
       "Cybersecurity training",
@@ -146,7 +146,7 @@ const projects = [
     duration: "2017",
     description:
       "A professional portal for legal document management and identity presentation. Enhanced digital accessibility and professional credibility for legal practitioners.",
-    image: "/images/picadailys.png",
+    image: "/images/portfolio-pplegals.jpg",
     features: [
       "Secure file upload system",
       "Digital signature integration",
@@ -168,7 +168,7 @@ const projects = [
     duration: "2017",
     description:
       "A full-scale wellness platform based in Abuja. Successfully transitioned a physical wellness brand into the digital marketplace.",
-    image: "/images/vendor-service.png",
+    image: "/images/portfolio-cbd.jpg",
     features: [
       "Product showcase system",
       "Secure checkout",
@@ -190,7 +190,7 @@ const projects = [
     duration: "2018",
     description:
       "A world-class authentication and engagement system for global football communities. Created a structured identity system for fanbases, enabling data-driven sports marketing.",
-    image: "/images/wastewise.png",
+    image: "/images/portfolio-interfrq.jpg",
     features: [
       "Fan registration system",
       "Club-based analytics",
@@ -212,7 +212,7 @@ const projects = [
     duration: "2025",
     description:
       "An ecosystem connecting households and businesses with recyclers and waste managers. Promoted environmental sustainability and improved municipal waste collection efficiency.",
-    image: "/images/wastewise.png",
+    image: "/images/portfolio-wastewise.png",
     features: [
       "Mobile App",
       "Vendor onboarding system",
@@ -228,13 +228,13 @@ const projects = [
     link: "https://www.wastewiseinc.com",
   },
   {
-    title: "Dear Communication Radio Training",
+    title: "Daar Communication Radio Training",
     category: "Media",
     subcategory: "Media Capacity Building",
     duration: "2018",
     description:
       "Digital literacy and software training for media professionals. Modernized the digital capabilities of radio and media staff.",
-    image: "/images/picadailys.png",
+    image: "/images/portfolio-daar.jpg",
     features: [
       "Graphics design training",
       "Computer literacy modules",
@@ -377,7 +377,7 @@ export default function PortfolioGrid() {
               <div
                 className="w-full lg:flex-1 h-[283px] lg:h-[347px] rounded-[13px]"
                 style={{
-                  background: `url('${project.image}')`,
+                  backgroundImage: `url('${project.image}')`,
                   backgroundSize: "cover",
                   backgroundPosition: "center",
                 }}
@@ -446,10 +446,11 @@ export default function PortfolioGrid() {
                   whileTap={{ scale: 0.98 }}
                 >
                   <Link
-                    href="#"
+                    href={project.link || "/request-quote"}
+                    target={project.link ? "_blank" : undefined}
                     className="flex items-center justify-center w-full py-[13px] bg-[#2D2555] dark:bg-[#068653] rounded-[7px] text-[13px] font-medium leading-[150%] tracking-[0.01em] uppercase text-white hover:bg-[#231d45] dark:hover:bg-[#057a4a] transition-colors"
                   >
-                    Start a Project
+                    {project.link ? "View Project" : "Start a Project"}
                   </Link>
                 </motion.div>
               </div>
