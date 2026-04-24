@@ -47,7 +47,7 @@ const team = [
   {
     name: "Afekemor Index",
     role: "Portfolio Co-Founder",
-    bio: "Index Afekemor is a Corporate Transformation Specialist (People • Systems • Structure) and Business Development Expert with over 15 years of experience helping organizations move from chaos to structured, high-performing systems.\n\nHe aligns people, processes, and business structure to drive efficiency, clarity, and sustainable growth, combining strategic insight with strong emotional intelligence to deliver measurable results.\n\nHe holds certifications from the University of Virginia and the Digital Marketing Institute, with international experience across the US, UK, and Australia.",
+    bio: "Index Afekemor is a Corporate Transformation Specialist (People • Systems • Structure) and Business Development Expert with over 15 years of experience driving organizational efficiency and growth.\n\nHe is known for helping businesses move from operational chaos to structured, high-performing systems. Index specializes in aligning people, processes, and business structure to improve efficiency, strengthen teams, and unlock sustainable growth.\n\nA results-driven strategist with strong emotional intelligence, he brings a people-centered yet highly structured approach to leadership—enabling organizations to achieve clarity, accountability, and measurable performance outcomes.\n\nIndex holds professional certifications in Business Strategy from the University of Virginia and Digital Leadership & Strategy Execution from the Digital Marketing Institute, equipping him to lead transformation initiatives in both traditional and digital environments.\n\nWith experience across international markets—including the United States, the United Kingdom, and Australia—he brings a global perspective to business transformation and operational excellence.",
     image: "/images/team-index.jpeg",
   },
   {
@@ -122,7 +122,7 @@ export default function Team() {
       {/* Team Cards — horizontal scroll on mobile, wrapped grid on desktop */}
       <div className="max-w-[1231px] mx-auto px-0 lg:px-6 mt-5 lg:mt-16">
         {/* Desktop grid */}
-        <div className="hidden lg:flex flex-wrap gap-8">
+        <div className="hidden lg:flex flex-wrap gap-8 items-start">
           {team.map((member, index) => (
             <motion.div
               key={member.name}
