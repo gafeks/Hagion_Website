@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import { useState } from "react";
 import { motion } from "framer-motion";
 import {
   LogoFacebook,
@@ -8,6 +9,26 @@ import {
   LogoGithub,
   LogoLinkedin,
 } from "@carbon/icons-react";
+
+const BIO_LIMIT = 120;
+
+function BioText({ bio }: { bio: string }) {
+  const [expanded, setExpanded] = useState(false);
+  const isLong = bio.length > BIO_LIMIT;
+  return (
+    <p className="text-[14px] font-normal leading-[150%] text-[#6B7280] dark:text-[#94A3B8] whitespace-pre-line">
+      {isLong && !expanded ? bio.slice(0, BIO_LIMIT).trimEnd() + "…" : bio}
+      {isLong && (
+        <button
+          onClick={() => setExpanded((v) => !v)}
+          className="ml-1 text-[#233876] dark:text-[#699EF4] font-semibold hover:underline focus:outline-none"
+        >
+          {expanded ? "Read less" : "Read more"}
+        </button>
+      )}
+    </p>
+  );
+}
 
 const team = [
   {
@@ -22,6 +43,12 @@ const team = [
     role: "Founder & MD/CEO",
     bio: "Afekemor Gift is a technology entrepreneur, software developer, and digital transformation strategist with over a decade of experience in building scalable digital platforms and enterprise systems. ",
     image: "/images/team-gift.jpeg",
+  },
+  {
+    name: "Afekemor Index",
+    role: "Portfolio Co-Founder",
+    bio: "Index Afekemor is a Corporate Transformation Specialist (People • Systems • Structure) and Business Development Expert with over 15 years of experience helping organizations move from chaos to structured, high-performing systems.\n\nHe aligns people, processes, and business structure to drive efficiency, clarity, and sustainable growth, combining strategic insight with strong emotional intelligence to deliver measurable results.\n\nHe holds certifications from the University of Virginia and the Digital Marketing Institute, with international experience across the US, UK, and Australia.",
+    image: "/images/team-index.jpeg",
   },
   {
     name: "Prosper Ikiriko",
@@ -107,7 +134,7 @@ export default function Team() {
               whileHover={{ y: -6, boxShadow: "0px 16px 24px rgba(0,0,0,0.08)" }}
             >
               <div className="p-4 pb-0">
-                <div className="w-full h-[192px] bg-[#E1EFFE] rounded-lg overflow-hidden relative">
+                <div className="w-full h-[280px] bg-[#E1EFFE] rounded-lg overflow-hidden relative">
                   <Image
                     src={member.image}
                     alt={member.name}
@@ -126,9 +153,7 @@ export default function Team() {
                       {member.role}
                     </span>
                   </div>
-                  <p className="text-[14px] font-normal leading-[150%] text-[#6B7280] dark:text-[#94A3B8]">
-                    {member.bio}
-                  </p>
+                  <BioText bio={member.bio} />
                 </div>
                 <div className="flex gap-3 mt-auto">
                   {socialIcons.map((Icon, i) => (
@@ -157,7 +182,7 @@ export default function Team() {
                 transition={{ duration: 0.4, delay: 0.1 * index }}
               >
                 <div className="p-4 pb-0">
-                  <div className="w-full h-[192px] bg-[#E1EFFE] rounded-lg overflow-hidden relative">
+                  <div className="w-full h-[280px] bg-[#E1EFFE] rounded-lg overflow-hidden relative">
                     <Image
                       src={member.image}
                       alt={member.name}
