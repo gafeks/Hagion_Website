@@ -201,9 +201,7 @@ export default function Team() {
                         {member.role}
                       </span>
                     </div>
-                    <p className="text-[14px] font-normal leading-[150%] text-[#6B7280] dark:text-[#94A3B8]">
-                      {member.bio}
-                    </p>
+                    <BioText bio={member.bio} />
                   </div>
                   <div className="flex gap-3 mt-auto">
                     {socialIcons.map((Icon, i) => (
